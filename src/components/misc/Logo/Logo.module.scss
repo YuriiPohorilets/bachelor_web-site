@@ -1,0 +1,14 @@
+@import '@/styles/variables', '@/styles/mixins';
+
+.link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: min(100%, 48px);
+  height: 100%;
+}
+
+.link > svg {
+  @include square(100%);
+}

@@ -1,3 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Unicase:wght@400;500;600;700&display=swap');
+
+@font-face {
+  font-family: 'Adobe Garamond Pro';
+  src: url('../assets/fonts/AdobeGaramondPro/AGaramondProRegular.eot');
+  src: url('../assets/fonts/AdobeGaramondPro/AGaramondProRegular.eot?#iefix')
+      format('embedded-opentype'),
+    url('../assets/fonts/AdobeGaramondPro/AGaramondProRegular.woff') format('woff'),
+    url('../assets/fonts/AdobeGaramondPro/AGaramondProRegular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Century Gothic';
+  src: url('../assets/fonts/CenturyGothic/CenturyGothicRegular.eot');
+  src: url('../assets/fonts/CenturyGothic/CenturyGothicRegular.eot?#iefix')
+      format('embedded-opentype'),
+    url('../assets/fonts/CenturyGothic/CenturyGothicRegular.woff') format('woff'),
+    url('../assets/fonts/CenturyGothic/CenturyGothicRegular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Century Gothic';
+  src: url('../assets/fonts/CenturyGothic/CenturyGothicBold.eot');
+  src: url('../assets/fonts/CenturyGothic/CenturyGothicBold.eot?#iefix') format('embedded-opentype'),
+    url('../assets/fonts/CenturyGothic/CenturyGothicBold.woff') format('woff'),
+    url('../assets/fonts/CenturyGothic/CenturyGothicBold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'GothamPro';
+  src: url('../assets/fonts/GothamPro/GothamProRegular.eot');
+  src: url('../assets/fonts/GothamPro/GothamProRegular.eot?#iefix') format('embedded-opentype'),
+    url('../assets/fonts/GothamPro/GothamProRegular.woff') format('woff'),
+    url('../assets/fonts/GothamPro/GothamProRegular.ttf') format('truetype');
+  font-style: normal;
+  font-weight: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'GothamPro';
+  src: url('../assets/fonts/GothamPro/GothamProLight.eot');
+  src: url('../assets/fonts/GothamPro/GothamProLight.eot?#iefix') format('embedded-opentype'),
+    url('../assets/fonts/GothamPro/GothamProLight.woff') format('woff'),
+    url('../assets/fonts/GothamPro/GothamProLight.ttf') format('truetype');
+  font-style: normal;
+  font-weight: 200;
+  font-display: swap;
+}
+
 *,
 *::before,
 *::after {
@@ -9,8 +68,8 @@ html {
 }
 
 body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu',
-    'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  font-family: 'GothamPro', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
@@ -19,12 +78,12 @@ body {
   overscroll-behavior-y: none;
 
   text-rendering: optimizeSpeed;
-  color: #1c1c1c;
+  color: #ffffff;
   line-height: normal;
   font-weight: 400;
   font-size: 18px;
 
-  background-color: #ffffff;
+  background-color: #1a1a1a;
 }
 
 ul[class],

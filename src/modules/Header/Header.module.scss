@@ -1,0 +1,19 @@
+@import '@/styles/variables', '@/styles/mixins';
+
+.header {
+  position: fixed;
+  top: 50px;
+  left: 0;
+  z-index: 800;
+
+  width: 100%;
+}
+
+.wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+
+  outline: 3px solid red;
+}

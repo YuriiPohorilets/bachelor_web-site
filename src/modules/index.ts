@@ -1,4 +1,6 @@
-export { Header } from './Header';
-export { Navigation } from './Navigation';
-export { Social } from './Social';
-export { Footer } from './Footer';
+export { Header } from './Header/Header';
+export { Footer } from './Footer/Footer';
+export { Navbar } from './Navbar/Navbar';
+export { Social } from './Social/Social';
+export { Address } from './Address/Address';
+export { OrderForm } from './OrderForm/OrderForm';

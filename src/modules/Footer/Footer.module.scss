@@ -1,0 +1,26 @@
+@import '@/styles/variables', '@/styles/mixins';
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.navList {
+  display: flex;
+  justify-content: space-between;
+
+  width: min(100%, 1050px);
+}
+
+.navItem {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.navLabel {
+  font-size: 20px;
+  color: $default-text;
+  text-transform: uppercase;
+}

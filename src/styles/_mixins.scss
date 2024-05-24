@@ -18,6 +18,16 @@
   }
 }
 
+@mixin hover-sm {
+  &:hover {
+    @content;
+  }
+
+  &:focus-visible {
+    @content;
+  }
+}
+
 @mixin md {
   @media (min-width: #{$screen-md-min}) {
     @content;

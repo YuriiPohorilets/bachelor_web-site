@@ -1,0 +1,13 @@
+@import '@/styles/variables', '@/styles/mixins';
+
+.copyWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  width: 100%;
+}
+
+.copyright {
+  text-transform: uppercase;
+}
