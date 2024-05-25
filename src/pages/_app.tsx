@@ -1,4 +1,5 @@
 import type { AppProps } from 'next/app';
+
 import { Layout } from '@/components/common';
 import '@/styles/index.css';
 

@@ -1,5 +1,5 @@
-const GrabAndGo = () => {
+const GrabAndGoPage = () => {
   return <div>GrabAndGo page</div>;
 };
 
-export default GrabAndGo;
+export default GrabAndGoPage;

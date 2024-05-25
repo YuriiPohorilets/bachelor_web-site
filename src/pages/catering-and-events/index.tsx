@@ -1,5 +1,5 @@
-const CateringAndEvents = () => {
-  return <div>CateringAndEvents</div>;
+const CateringAndEventsPage = () => {
+  return <div>CateringAndEventsPage</div>;
 };
 
-export default CateringAndEvents;
+export default CateringAndEventsPage;

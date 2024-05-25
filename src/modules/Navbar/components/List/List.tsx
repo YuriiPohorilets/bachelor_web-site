@@ -1,7 +1,12 @@
-import { navigationList } from '@/constants/navigation';
+import classNames from 'classnames';
 
-interface IProps extends React.PropsWithChildren {}
+import styles from './List.module.scss';
 
-export const List: React.FC<IProps> = ({ children }) => {
-  return <ul>{children}</ul>;
+interface IProps extends React.PropsWithChildren {
+  direction?: 'row' | 'column';
+  className?: string;
+}
+
+export const List: React.FC<IProps> = ({ children, direction = 'row', className }) => {
+  return <ul className={classNames(styles.list, styles[direction], className)}> {children}</ul>;
 };

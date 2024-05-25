@@ -20,3 +20,9 @@ export const LogoIcon = () => {
     </svg>
   );
 };
+
+export const OutwardArrowIcon = () => (
+  <svg width="36" height="38" viewBox="0 0 36 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M10 27.5L32.5 10M32.5 10H16M32.5 10L30.5 26" stroke="currentColor" strokeWidth="2" />
+  </svg>
+);

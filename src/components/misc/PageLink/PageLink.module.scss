@@ -1,0 +1,42 @@
+@import '@/styles/variables', '@/styles/mixins';
+
+.link {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 16px;
+
+  padding-block: 6px;
+
+  color: $white;
+
+  border-bottom: 1px solid $light-grey;
+
+  transition: color $duration-sm $easing-base, border-color $duration-sm $easing-base;
+
+  @include hover {
+    color: $golden;
+    border-color: $golden;
+  }
+}
+
+.link > span:not([class]) {
+  text-transform: uppercase;
+  font-family: $font-cormorantUnicase;
+}
+
+.labelWrapper {
+  display: flex;
+  align-items: flex-end;
+  gap: 2px;
+}
+
+.label {
+  color: currentColor;
+  font-size: 38px;
+  font-family: $font-cormorantUnicase;
+}
+
+.icon {
+  color: currentColor;
+}

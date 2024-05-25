@@ -15,23 +15,10 @@ export const Header: React.FC = () => {
           <Navbar>
             <Navbar.List>
               {headerNavList.map(item => {
-                if (item.dropdown) {
-                  return (
-                    <Navbar.Dropdown key={item.id}>
-                      <Navbar.List>
-                        {item.dropdown.map(subitem => (
-                          <Navbar.Item key={subitem.id} item={subitem} />
-                        ))}
-                      </Navbar.List>
-                    </Navbar.Dropdown>
-                  );
-                }
+                if (item.dropdown) return;
 
-                return <Navbar.Item key={item.id} item={item} />;
+                return <Navbar.Item key={item.id} item={item} className={styles.navItem} />;
               })}
-              <Navbar.Dropdown>
-                <Navbar.List></Navbar.List>
-              </Navbar.Dropdown>
             </Navbar.List>
           </Navbar>
         </div>

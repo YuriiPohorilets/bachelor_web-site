@@ -9,7 +9,9 @@ export const Copyright: React.FC = () => {
     <div className={styles.copyWrapper}>
       <span className={styles.copyright}>&copy;{date} Bachelor bunny</span>
 
-      <button onClick={scrollToTop}>BACK TO TOP</button>
+      <button type="button" onClick={scrollToTop} className={styles.btn}>
+        Back to top
+      </button>
     </div>
   );
 };
