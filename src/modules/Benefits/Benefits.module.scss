@@ -1,0 +1,36 @@
+@import '@/styles/variables', '@/styles/mixins';
+
+.list {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+}
+
+.item {
+  position: relative;
+
+  width: min(100%, 123px);
+
+  text-align: center;
+  font-family: $font-century-gothic;
+  font-size: 16px;
+  color: $white;
+  letter-spacing: 0.02em;
+  white-space: pre-line;
+
+  &::after {
+    content: '';
+
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+
+    translate: -50% 100%;
+
+    width: 35%;
+    height: 1px;
+
+    background-color: $golden;
+  }
+}

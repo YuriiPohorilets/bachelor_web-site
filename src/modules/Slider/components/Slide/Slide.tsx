@@ -15,10 +15,7 @@ export const Slide: React.FC<IProps> = ({ children }) => {
     fade: {
       initial: { opacity: 0 },
       animate: { opacity: 1 },
-      exit: {
-        opacity: 0,
-        transition: { duration, delay: duration / 3 },
-      },
+      exit: { opacity: 0 },
     },
     slide: {
       initial: { opacity: 1, x: '100%' },

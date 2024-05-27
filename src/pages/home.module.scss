@@ -1,0 +1,78 @@
+@import '@/styles/variables', '@/styles/mixins';
+
+.section {
+  position: relative;
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+
+    @include square(100%);
+
+    background: linear-gradient(180deg, rgba(32, 26, 11, 0.37) -39%, rgba(0, 0, 0, 0.7) 122%);
+  }
+}
+
+.wrapper {
+  position: relative;
+
+  padding-top: 260px;
+  padding-bottom: 40px;
+  min-height: 1220px;
+  height: min(100%, 1220px);
+}
+
+.sliderWrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+
+  width: 100%;
+  height: 100%;
+}
+
+.contentWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: 180px;
+
+  height: calc(100% - 300px);
+}
+
+.titleWrapper {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+}
+
+.title > span {
+  font-family: $font-cormorantUnicase;
+  color: $white;
+  letter-spacing: 0.03em;
+  font-size: 118px;
+  font-weight: 500;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.title > span:last-of-type {
+  font-family: $font-gotham-pro;
+  font-weight: 400;
+  font-size: 58px;
+  letter-spacing: 0.35em;
+}

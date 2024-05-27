@@ -16,6 +16,8 @@ export const Item: React.FC<IProps> = ({ children, item, dropdown = false, class
     <li>
       <Link href={item.link!} className={classNames(styles.link, className)}>
         {item.label}
+        {children}
+        {dropdown}
       </Link>
     </li>
   );

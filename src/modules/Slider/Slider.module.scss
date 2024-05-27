@@ -4,4 +4,11 @@
   position: relative;
 
   width: 100%;
+
+  overflow: hidden;
+}
+
+.fullWidth {
+  margin-left: -48px;
+  width: calc(100% + (48px * 2));
 }

@@ -1,0 +1,47 @@
+@import '@/styles/variables', '@/styles/mixins';
+
+.wrapper {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 200;
+}
+
+.list {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+}
+
+.item {
+  @include square(20px, 50%);
+  position: relative;
+}
+
+.btn {
+  @include square(100%);
+
+  padding: 0;
+  display: block;
+
+  border: none;
+  border-radius: inherit;
+  background-color: $light-grey;
+
+  cursor: pointer;
+}
+
+.btn::before {
+  content: '';
+  @include square(calc(100% - 4px));
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 20;
+
+  translate: -50% -50%;
+
+  border-radius: inherit;
+  background-color: $main;
+}
