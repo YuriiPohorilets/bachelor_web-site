@@ -8,7 +8,7 @@ interface IProps {}
 
 export const Logo: React.FC<IProps> = () => {
   return (
-    <Link href="/" className={styles.link}>
+    <Link href="/" aria-label="Logo Bachelor Bunny Gourmet" className={styles.link}>
       <LogoIcon />
     </Link>
   );

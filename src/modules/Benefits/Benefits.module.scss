@@ -10,7 +10,8 @@
 .item {
   position: relative;
 
-  width: min(100%, 123px);
+  padding-inline: 6px;
+  width: 135px;
 
   text-align: center;
   font-family: $font-century-gothic;

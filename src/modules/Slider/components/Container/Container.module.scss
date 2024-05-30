@@ -4,7 +4,6 @@
   position: relative;
 
   width: 100%;
-  height: 100vh;
-
-  // overflow: hidden;
+  min-height: 1180px;
+  height: min(100lvh, 1220px);
 }
