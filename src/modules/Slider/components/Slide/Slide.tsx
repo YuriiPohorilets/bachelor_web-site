@@ -5,5 +5,5 @@ import styles from './Slide.module.scss';
 interface IProps extends React.PropsWithChildren {}
 
 export const Slide: React.FC<IProps> = ({ children }) => {
-  return <motion.div className={styles.slide}>{children}</motion.div>;
+  return <div className={styles.slide}>{children}</div>;
 };

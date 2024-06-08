@@ -1,4 +1,4 @@
-@import '@/styles/variables', '@/styles/mixins';
+@import '@/styles/variables';
 
 .text {
   color: $white;
@@ -9,11 +9,11 @@
   text-align: justify;
 }
 
-.text::first-letter {
+.initialLetter::first-letter {
   margin-bottom: -0.1em;
   float: left;
 
-  font-size: 118px;
+  font-size: 6.5em;
   font-family: $font-cormorantUnicase;
   font-weight: 500;
   line-height: 0.75;

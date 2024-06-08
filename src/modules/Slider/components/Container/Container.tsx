@@ -25,12 +25,12 @@ export const Container: React.FC<IProps> = ({ children }) => {
   };
 
   useEffect(() => {
+    if (!config.autoplay) return;
+
     const slideInterval = setInterval(controls.nextSlide, config.delay);
 
-    return () => {
-      clearInterval(slideInterval);
-    };
-  }, [controls.nextSlide, config.delay]);
+    return () => clearInterval(slideInterval);
+  }, [controls.nextSlide, config.delay, config.autoplay]);
 
   return (
     <div className={styles.container}>
@@ -42,6 +42,7 @@ export const Container: React.FC<IProps> = ({ children }) => {
             animate={currentSlide === index ? 'animate' : 'exit'}
             exit="exit"
             transition={{ duration: config.duration, ease: 'easeInOut' }}
+            className={styles.child}
           >
             {React.cloneElement(child as React.ReactElement)}
           </motion.div>

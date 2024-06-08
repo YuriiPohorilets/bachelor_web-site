@@ -3,7 +3,16 @@
 .container {
   position: relative;
 
-  width: 100%;
-  min-height: 1180px;
-  height: min(100lvh, 1220px);
+  @include square(100%);
+}
+
+.child {
+  @include square(100%);
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 1;
+
+  translate: -50% -50%;
 }

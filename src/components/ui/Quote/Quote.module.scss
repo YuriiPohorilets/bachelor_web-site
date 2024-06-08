@@ -1,4 +1,4 @@
-@import '@/styles/variables', '@/styles/mixins';
+@import '@/styles/variables';
 
 .text {
   position: relative;
@@ -14,7 +14,9 @@
   &::before,
   &::after {
     position: absolute;
+
     font-size: 150px;
+    color: currentColor;
   }
 }
 

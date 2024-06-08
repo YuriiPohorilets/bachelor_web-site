@@ -1,0 +1,23 @@
+@import '@/styles/variables', '@/styles/mixins';
+
+.wrapper {
+  position: relative;
+  z-index: 1;
+
+  min-height: 1080px;
+  height: min(100lvh, 1080px);
+}
+
+.title {
+  position: absolute;
+  top: 250px;
+  left: 50%;
+  z-index: 10;
+
+  translate: -50% 0;
+
+  font-family: $font-cormorantUnicase;
+  font-size: 150px;
+  letter-spacing: -0.01em;
+  text-align: center;
+}

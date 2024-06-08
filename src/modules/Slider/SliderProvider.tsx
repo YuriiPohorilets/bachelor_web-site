@@ -1,11 +1,16 @@
 import { createContext, useContext } from 'react';
 
+interface IConfig {
+  delay: number;
+  duration: number;
+  effect: 'fade' | 'slide';
+  autoplay: boolean;
+  length: number;
+}
+
 interface IContextProps {
   currentSlide: number;
-  config: {
-    delay: number;
-    duration: number; effect: 'fade' | 'slide'
-  };
+  config: IConfig;
   controls: {
     nextSlide: () => void;
     prevSlide: () => void;

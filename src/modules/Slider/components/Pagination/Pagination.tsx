@@ -1,19 +1,16 @@
 import classNames from 'classnames';
 import styles from './Pagination.module.scss';
-
-type PorisionType = {
-  top: 'top';
-  bottom: 'bottom';
-  right: 'right';
-  left: 'left';
-  center: 'center';
-};
+import { useSliderContext } from '@/modules/Slider/SliderProvider';
 
 interface IProps {
-  position?: [PorisionType, PorisionType];
+  position?: string;
 }
 
 export const Pagination: React.FC<IProps> = ({ position }) => {
+  const { currentSlide, config, controls } = useSliderContext();
+
+  const arr = new Array(config.length);
+
   return (
     <div className={styles.wrapper}>
       <ul className={styles.list}>

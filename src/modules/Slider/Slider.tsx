@@ -12,6 +12,8 @@ interface IProps extends React.PropsWithChildren {
   duration: number;
   effect?: 'fade' | 'slide';
   fullWidth?: boolean;
+  autoplay?: boolean;
+  length: number;
 }
 
 const SliderComponent: React.FC<IProps> = ({
@@ -20,17 +22,17 @@ const SliderComponent: React.FC<IProps> = ({
   duration,
   effect = 'fade',
   fullWidth = true,
+  autoplay = false,
+  length,
 }) => {
   const [currentSlide, setCurrentSlide] = useState(0);
 
-  const l = 2;
-
   const nextSlide = useCallback(() => {
-    setCurrentSlide(prevSlide => (prevSlide + 1) % l);
-  }, [l]);
+    setCurrentSlide(prevSlide => (prevSlide + 1) % length);
+  }, [length]);
 
   const prevSlide = () => {
-    setCurrentSlide(prevSlide => (prevSlide - 1 + l) % l);
+    setCurrentSlide(prevSlide => (prevSlide - 1 + length) % length);
   };
 
   const changeSlide = (index: number) => {
@@ -39,7 +41,7 @@ const SliderComponent: React.FC<IProps> = ({
 
   const contextValues = {
     currentSlide,
-    config: { delay, duration, effect },
+    config: { delay, duration, effect, autoplay, length },
     controls: { nextSlide, prevSlide, changeSlide },
   };
 

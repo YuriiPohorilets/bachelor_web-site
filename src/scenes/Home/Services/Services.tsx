@@ -2,11 +2,11 @@ import Image from 'next/image';
 
 import { Container, Section } from '@/components/common';
 
-import styles from './About.module.scss';
+import styles from './Services.module.scss';
 
-export const About: React.FC = () => {
+export const Services: React.FC = () => {
   return (
-    <Section shadow="both">
+    <Section shadow="top">
       <Container>
         <div className={styles.wrapper}></div>
       </Container>

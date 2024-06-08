@@ -5,8 +5,6 @@ $light-grey: #c0c0c0;
 $main: #262626;
 $dark-bg: #1a1a1a;
 
-$overlay-gradient: linear-gradient(180deg, rgba(32, 26, 11, 0.37) -39%, rgba(0, 0, 0, 0.7) 122%);
-
 $font-adobe-garamond-pro: 'Adobe Garamond Pro', serif;
 $font-century-gothic: 'Century Gothic', sans-serif;
 $font-gotham-pro: 'GothamPro', sans-serif;
@@ -22,3 +20,5 @@ $screen-md-min: 768px;
 $screen-lg-min: 1280px;
 $screen-xl-min: 1440px;
 $screen-xxl-min: 1920px;
+
+$container-padding: 48px;

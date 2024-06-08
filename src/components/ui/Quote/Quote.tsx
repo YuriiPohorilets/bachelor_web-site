@@ -1,5 +1,4 @@
 import classNames from 'classnames';
-
 import styles from './Quote.module.scss';
 
 interface IProps extends React.PropsWithChildren {
