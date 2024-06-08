@@ -2,6 +2,7 @@ import { GetStaticProps, GetStaticPaths } from 'next';
 import { getPosts } from '@/services/service';
 
 import { HeadPage } from '@/components/common';
+import { Footer } from '@/modules';
 import { BackgroundWrapper } from '@/components/misc';
 import {
   Hero,
@@ -16,6 +17,7 @@ import {
 } from '@/scenes/Home';
 
 import AboutBgImg from '@/assets/images/home-page/about/bg.jpg';
+import FooterBgImg from '@/assets/images/home-page/footer-bg.jpg';
 
 const headContent = {
   title: 'Home - Bachelor Bunny Gourmet',
@@ -39,7 +41,10 @@ const HomePage = ({ posts }: { posts: any }) => {
       <ServiceEvents />
       <Advantage />
       <OurClients />
-      <Community />
+      <BackgroundWrapper bgUrl={FooterBgImg.src}>
+        <Community />
+        <Footer />
+      </BackgroundWrapper>
     </>
   );
 };

@@ -1,8 +1,13 @@
 import { Address, Social } from '@/modules';
 import { Container } from '@/components/common';
-import { Copyright, FooterNavbar } from '@/components/misc';
+import { ContactUsButton, Copyright, FooterNavbar } from '@/components/misc';
+import { CrownIcon } from '@/assets/icons';
 
 import styles from './Footer.module.scss';
+
+const content = {
+  title: ['Bachelor bunny', 'gourmet'],
+};
 
 export const Footer: React.FC = () => {
   const navItems = [
@@ -15,20 +20,31 @@ export const Footer: React.FC = () => {
     <footer className={styles.footer}>
       <Container>
         <div className={styles.wrapper}>
-          <div>
-            <div>LOGO</div>
-            <div>CONTACTS US BUTTON</div>
+          <div className={styles.innerWrapper}>
+            <div className={styles.contentWrapper}>
+              <div className={styles.logoWrapper}>
+                <div className={styles.iconWrapper}>
+                  <CrownIcon />
+                </div>
+
+                <span className={styles.logo}>
+                  {content.title[0]} <span>{content.title[1]}</span>
+                </span>
+              </div>
+
+              <ContactUsButton variant="outlined" />
+            </div>
+
+            <ul className={styles.navList}>
+              {navItems.map(({ id, label, component }) => (
+                <li key={id} className={styles.navItem}>
+                  <span className={styles.navLabel}>{label}</span>
+
+                  {component}
+                </li>
+              ))}
+            </ul>
           </div>
-
-          <ul className={styles.navList}>
-            {navItems.map(({ id, label, component }) => (
-              <li key={id} className={styles.navItem}>
-                <span className={styles.navLabel}>{label}</span>
-
-                {component}
-              </li>
-            ))}
-          </ul>
 
           <Copyright />
         </div>

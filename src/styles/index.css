@@ -84,6 +84,10 @@ body {
   font-size: 18px;
 
   background-color: #1a1a1a;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    url('../assets/images/bg.jpeg');
+  background-size: contain;
+  background-repeat: repeat-y;
 }
 
 ul[class],
@@ -132,4 +136,18 @@ select {
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
+}
+
+.hidden {
+  position: absolute;
+  margin: -1px;
+  padding: 0;
+  width: 1px;
+  height: 1px;
+  white-space: nowrap;
+  word-wrap: normal;
+  border: 0;
+  clip: rect(0 0 0 0);
+  clip-path: inset(100%);
+  overflow: hidden;
 }

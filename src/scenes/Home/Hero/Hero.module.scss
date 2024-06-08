@@ -4,15 +4,14 @@
   position: relative;
   z-index: 1;
 
-  padding-top: 264px;
-  padding-bottom: 50px;
-
-  min-height: 1220px;
-  height: min(100lvh, 1220px);
-
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+
+  padding-top: 264px;
+  padding-bottom: 50px;
+  min-height: 1220px;
+  height: min(100lvh, 1220px);
 }
 
 .contentWrapper {
