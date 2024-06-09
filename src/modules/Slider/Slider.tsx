@@ -1,55 +1,65 @@
-import { useCallback, useState } from 'react';
-import { AnimatePresence } from 'framer-motion';
+import React, { useState } from 'react';
+
+import { AnimatePresence, motion } from 'framer-motion';
 import classNames from 'classnames';
 
-import { SliderContext } from './SliderProvider';
-import { Container, Pagination, Slide } from '@/modules/Slider/components';
+import { IConfig, SliderContext } from './SliderProvider';
+import { Pagination, Slide } from '@/modules/Slider/components';
 
 import styles from './Slider.module.scss';
 
 interface IProps extends React.PropsWithChildren {
-  delay: number;
-  duration: number;
-  effect?: 'fade' | 'slide';
+  config: IConfig;
   fullWidth?: boolean;
-  autoplay?: boolean;
-  length: number;
+  pagination?: boolean;
 }
 
 const SliderComponent: React.FC<IProps> = ({
   children,
-  delay,
-  duration,
-  effect = 'fade',
-  fullWidth = true,
-  autoplay = false,
-  length,
+  config,
+  fullWidth = false,
+  pagination = false,
 }) => {
   const [currentSlide, setCurrentSlide] = useState(0);
 
-  const nextSlide = useCallback(() => {
-    setCurrentSlide(prevSlide => (prevSlide + 1) % length);
-  }, [length]);
+  const length = Array.isArray(children) ? children.length : 1;
 
-  const prevSlide = () => {
-    setCurrentSlide(prevSlide => (prevSlide - 1 + length) % length);
+  const handleNextSlide = () => {
+    setCurrentSlide(prevState => (prevState >= length - 1 ? 0 : prevState + 1));
   };
 
-  const changeSlide = (index: number) => {
+  const handlePrevSlide = () => {
+    setCurrentSlide(prevState => (prevState <= 0 ? length - 1 : prevState - 1));
+  };
+
+  const handleChangeSlide = (index: number) => {
     setCurrentSlide(index);
   };
 
   const contextValues = {
+    config,
     currentSlide,
-    config: { delay, duration, effect, autoplay, length },
-    controls: { nextSlide, prevSlide, changeSlide },
+    length,
+    controls: {
+      nextSlide: handleNextSlide,
+      prevSlide: handlePrevSlide,
+      changeSlide: handleChangeSlide,
+    },
   };
 
   return (
     <SliderContext.Provider value={contextValues}>
       <AnimatePresence initial={false}>
         <div className={classNames(styles.wrapper, fullWidth ? styles.fullWidth : '')}>
-          {children}
+          <ul className={styles.list}>
+            {React.Children.map(children, (child, index) => (
+              <motion.div animate={{ opacity: currentSlide === index ? 1 : 0 }} key={index}>
+                {React.cloneElement(child as React.ReactElement)}
+              </motion.div>
+            ))}
+          </ul>
+
+          {pagination && <Pagination />}
         </div>
       </AnimatePresence>
     </SliderContext.Provider>
@@ -57,7 +67,6 @@ const SliderComponent: React.FC<IProps> = ({
 };
 
 export const Slider = Object.assign(SliderComponent, {
-  Container,
   Slide,
   Pagination,
 });

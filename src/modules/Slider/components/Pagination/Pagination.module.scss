@@ -2,46 +2,17 @@
 
 .wrapper {
   position: absolute;
-  bottom: 0;
-  left: 0;
-  z-index: 200;
-}
+  top: 200px;
+  left: 200px;
+  // z-index: 10;
 
-.list {
-  display: flex;
-  align-items: center;
-  gap: 11px;
-}
-
-.item {
-  @include square(20px, 50%);
-  position: relative;
+  width: 500px;
+  height: 100px;
 }
 
 .btn {
-  @include square(100%);
-
-  padding: 0;
-  display: block;
-
-  border: none;
-  border-radius: inherit;
-  background-color: $light-grey;
+  width: 30px;
+  height: 30px;
 
   cursor: pointer;
-}
-
-.btn::before {
-  content: '';
-  @include square(calc(100% - 4px));
-
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  z-index: 20;
-
-  translate: -50% -50%;
-
-  border-radius: inherit;
-  background-color: $main;
 }

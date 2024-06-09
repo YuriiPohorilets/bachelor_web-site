@@ -1,13 +1,15 @@
+import Image from 'next/image';
+
 import { Container, Section } from '@/components/common';
 import { Paragraph } from '@/components/ui';
 import { PageLink } from '@/components/misc';
 import { PagePathname } from '@/types';
 
+import { CrownIcon } from '@/assets/icons';
 import ContentImg1 from '@/assets/images/home-page/services/grab-and-go/content-1.jpeg';
 import ContentImg2 from '@/assets/images/home-page/services/grab-and-go/content-2.jpeg';
 
 import styles from './ServiceGrabAndGo.module.scss';
-import Image from 'next/image';
 
 const content = {
   title: 'Grab & go',
@@ -18,6 +20,10 @@ const content = {
 export const ServiceGrabAndGo: React.FC = () => {
   return (
     <Section>
+      <div className={styles.iconWrapper}>
+        <CrownIcon />
+      </div>
+
       <Container>
         <div className={styles.wrapper}>
           <h2 className="hidden">{content.title}</h2>

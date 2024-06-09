@@ -31,7 +31,7 @@ export const About: React.FC = () => {
               {content.quote}
             </Quote>
 
-            <div className={styles.descirptionWrapper}>
+            <div className={styles.descriptionWrapper}>
               <Paragraph>{content.description}</Paragraph>
             </div>
           </div>

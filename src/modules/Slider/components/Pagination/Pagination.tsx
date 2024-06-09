@@ -1,26 +1,29 @@
 import classNames from 'classnames';
-import styles from './Pagination.module.scss';
 import { useSliderContext } from '@/modules/Slider/SliderProvider';
+
+import styles from './Pagination.module.scss';
 
 interface IProps {
   position?: string;
 }
 
 export const Pagination: React.FC<IProps> = ({ position }) => {
-  const { currentSlide, config, controls } = useSliderContext();
-
-  const arr = new Array(config.length);
+  const { controls, length } = useSliderContext();
+  const items = new Array(length).fill('');
 
   return (
     <div className={styles.wrapper}>
       <ul className={styles.list}>
-        <li className={styles.item}>
-          <button
-            type="button"
-            aria-label="pagination"
-            className={classNames(styles.btn, styles.active)}
-          />
-        </li>
+        {items.map((_, index) => (
+          <li key={index} className={styles.item}>
+            <button
+              type="button"
+              aria-label="pagination"
+              onClick={() => controls.changeSlide(index)}
+              className={classNames(styles.btn, styles.active)}
+            />
+          </li>
+        ))}
       </ul>
     </div>
   );

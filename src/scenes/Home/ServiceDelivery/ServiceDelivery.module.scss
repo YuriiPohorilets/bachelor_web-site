@@ -1,0 +1,44 @@
+@import '@/styles/variables', '@/styles/mixins';
+
+.wrapper {
+  min-height: 1100px;
+  height: min(100vh, 1100px);
+}
+
+.imgWrapper {
+  margin-left: -$container-padding;
+  width: calc(100% + ($container-padding * 2));
+
+  clip-path: polygon(
+    0 0,
+    170px 0,
+    170px 417px,
+    calc(170px + 780px) 417px,
+    calc(170px + 780px) 0,
+    100% 0,
+    100% 100%,
+    0 100%
+  );
+
+  & > img {
+    @include square(100%);
+    object-fit: cover;
+    object-position: center;
+  }
+}
+
+.contentWrapper {
+  position: absolute;
+  top: 0;
+  left: 170px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 87px;
+
+  padding-inline: 93px;
+  padding-bottom: 61px;
+  padding-top: 78px;
+  width: min(100%, 780px);
+}

@@ -52,3 +52,19 @@
   right: 0;
   z-index: 2;
 }
+
+.iconWrapper {
+  position: absolute;
+  top: 134px;
+  left: 52%;
+
+  translate: -50% 0;
+
+  width: 238px;
+
+  opacity: 0.03;
+
+  & > svg {
+    @include square(100%);
+  }
+}
