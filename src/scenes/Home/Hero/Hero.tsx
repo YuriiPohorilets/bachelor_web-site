@@ -1,17 +1,44 @@
+import Image from 'next/image';
+
 import { Container, Section } from '@/components/common';
-import { Benefits } from '@/modules';
+import { Benefits, Slider } from '@/modules';
 import { CrownIcon } from '@/assets/icons';
 
 import styles from './Hero.module.scss';
 
+import SlideImg1 from '@/assets/images/home-page/hero/slide-1.jpg';
+import SlideImg2 from '@/assets/images/home-page/hero/slide-2.jpg';
+
 const content = {
   title: ['Bachelor bunny', 'gourmet'],
   description: 'Delicious meals delivered to your door',
+  slides: [{ img: SlideImg1 }, { img: SlideImg2 }],
 };
 
 export const Hero: React.FC = () => {
   return (
     <Section shadow="bottom">
+      <Slider
+        className={styles.sliderWrapper}
+        fullWidth={true}
+        pagination={false}
+        length={content.slides.length}
+        config={{
+          effect: 'fade',
+          delay: 5000,
+          duration: 150,
+          autoplay: true,
+        }}
+      >
+        <Slider.Container>
+          {content.slides.map((item, index) => (
+            <Slider.Slide key={index}>
+              <Image alt="" src={item.img} width={1920} height={1080} className={styles.imgSlide} />
+            </Slider.Slide>
+          ))}
+        </Slider.Container>
+      </Slider>
+
       <Container>
         <div className={styles.wrapper}>
           <div className={styles.contentWrapper}>

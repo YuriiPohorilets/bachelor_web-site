@@ -4,11 +4,11 @@ import { useSliderContext } from '@/modules/Slider/SliderProvider';
 import styles from './Pagination.module.scss';
 
 interface IProps {
-  position?: string;
+  position?: ['top', 'left'];
 }
 
 export const Pagination: React.FC<IProps> = ({ position }) => {
-  const { controls, length } = useSliderContext();
+  const { controls, length, currentSlide } = useSliderContext();
   const items = new Array(length).fill('');
 
   return (
@@ -20,7 +20,7 @@ export const Pagination: React.FC<IProps> = ({ position }) => {
               type="button"
               aria-label="pagination"
               onClick={() => controls.changeSlide(index)}
-              className={classNames(styles.btn, styles.active)}
+              className={classNames(styles.btn, index === currentSlide ? styles.active : '')}
             />
           </li>
         ))}

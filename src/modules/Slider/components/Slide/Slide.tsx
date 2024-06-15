@@ -1,9 +1,11 @@
-import { motion } from 'framer-motion';
+import classNames from 'classnames';
 
 import styles from './Slide.module.scss';
 
-interface IProps extends React.PropsWithChildren {}
+interface IProps extends React.PropsWithChildren {
+  className?: string;
+}
 
-export const Slide: React.FC<IProps> = ({ children }) => {
-  return <li className={styles.slide}>{children}</li>;
+export const Slide: React.FC<IProps> = ({ children, className }) => {
+  return <div className={classNames(styles.slide, className)}>{children}</div>;
 };

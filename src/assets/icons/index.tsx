@@ -57,3 +57,9 @@ export const CrownIcon = () => (
     />
   </svg>
 );
+
+export const ArrowNavigationIcon = () => (
+  <svg xmlns="http://www.w3.org/2000/svg" width="65" height="89" viewBox="0 0 65 89" fill="none">
+    <path d="M64.5 44.8327L0 0.665405L55.5 44.8327L0 89L64.5 44.8327Z" fill="currentColor" />
+  </svg>
+);

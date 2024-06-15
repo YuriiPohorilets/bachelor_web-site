@@ -1,0 +1,23 @@
+@import '@/styles/variables', '@/styles/mixins';
+
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding-block: 18px;
+  padding-inline: 20px;
+
+  color: $golden;
+
+  border: none;
+  background-color: transparent;
+
+  cursor: pointer;
+}
+
+.btn.prev {
+  & > svg {
+    scale: -1;
+  }
+}

@@ -13,3 +13,11 @@
   margin-left: -$container-padding;
   width: calc(100% + ($container-padding * 2));
 }
+
+.list {
+  @include square(100%);
+}
+
+.item {
+  @include square(100%);
+}

@@ -1,10 +1,8 @@
-import React, { useState } from 'react';
-
-import { AnimatePresence, motion } from 'framer-motion';
+import React, { useCallback, useEffect, useRef, useState } from 'react';
 import classNames from 'classnames';
 
 import { IConfig, SliderContext } from './SliderProvider';
-import { Pagination, Slide } from '@/modules/Slider/components';
+import { Pagination, Slide, NavigationButton, Container } from '@/modules/Slider/components';
 
 import styles from './Slider.module.scss';
 
@@ -12,6 +10,8 @@ interface IProps extends React.PropsWithChildren {
   config: IConfig;
   fullWidth?: boolean;
   pagination?: boolean;
+  className?: string;
+  length: number;
 }
 
 const SliderComponent: React.FC<IProps> = ({
@@ -19,25 +19,59 @@ const SliderComponent: React.FC<IProps> = ({
   config,
   fullWidth = false,
   pagination = false,
+  className,
+  length,
 }) => {
+  const timerRef = useRef<NodeJS.Timeout | null>(null);
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [direction, setDirection] = useState(0);
 
-  const length = Array.isArray(children) ? children.length : 1;
+  const resetInterval = useCallback(() => {
+    if (timerRef.current) {
+      clearInterval(timerRef.current);
+    }
 
-  const handleNextSlide = () => {
+    if (config.autoplay) {
+      timerRef.current = setInterval(() => {
+        setCurrentSlide(prevState => (prevState >= length - 1 ? 0 : prevState + 1));
+        setDirection(1);
+      }, config.delay);
+    }
+  }, [config.autoplay, config.delay, length]);
+
+  const handleNextSlide = useCallback(() => {
     setCurrentSlide(prevState => (prevState >= length - 1 ? 0 : prevState + 1));
-  };
+    setDirection(1);
+    resetInterval();
+  }, [length, resetInterval]);
 
   const handlePrevSlide = () => {
     setCurrentSlide(prevState => (prevState <= 0 ? length - 1 : prevState - 1));
+    setDirection(-1);
+    resetInterval();
   };
 
   const handleChangeSlide = (index: number) => {
+    const newDirection = index > currentSlide ? 1 : -1;
+
     setCurrentSlide(index);
+    setDirection(newDirection);
+
+    resetInterval();
   };
 
+  useEffect(() => {
+    resetInterval();
+
+    return () => {
+      if (timerRef.current) {
+        clearInterval(timerRef.current);
+      }
+    };
+  }, [resetInterval]);
+
   const contextValues = {
-    config,
+    config: { ...config, direction },
     currentSlide,
     length,
     controls: {
@@ -49,24 +83,17 @@ const SliderComponent: React.FC<IProps> = ({
 
   return (
     <SliderContext.Provider value={contextValues}>
-      <AnimatePresence initial={false}>
-        <div className={classNames(styles.wrapper, fullWidth ? styles.fullWidth : '')}>
-          <ul className={styles.list}>
-            {React.Children.map(children, (child, index) => (
-              <motion.div animate={{ opacity: currentSlide === index ? 1 : 0 }} key={index}>
-                {React.cloneElement(child as React.ReactElement)}
-              </motion.div>
-            ))}
-          </ul>
-
-          {pagination && <Pagination />}
-        </div>
-      </AnimatePresence>
+      <div className={classNames(styles.wrapper, className, fullWidth ? styles.fullWidth : '')}>
+        {children}
+        {pagination && <Pagination />}
+      </div>
     </SliderContext.Provider>
   );
 };
 
 export const Slider = Object.assign(SliderComponent, {
   Slide,
+  Container,
   Pagination,
+  NavigationButton,
 });
