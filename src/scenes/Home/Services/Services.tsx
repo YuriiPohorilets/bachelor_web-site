@@ -36,12 +36,13 @@ const content = {
 
 export const Services: React.FC = () => {
   return (
-    <Section shadow="top">
-      <h2 className="hidden">Services</h2>
-
+    <Section>
       <Container>
         <div className={styles.wrapper}>
+          <h2 className="hidden">Services</h2>
+
           <Slider
+            className={styles.slider}
             fullWidth={true}
             pagination={true}
             length={content.slider.length}
@@ -49,7 +50,7 @@ export const Services: React.FC = () => {
               effect: 'slide',
               delay: 6000,
               duration: 150,
-              autoplay: false,
+              autoplay: true,
             }}
           >
             <Slider.Container className={styles.sliderContainer}>

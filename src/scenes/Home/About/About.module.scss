@@ -1,6 +1,8 @@
 @import '@/styles/variables', '@/styles/mixins';
 
 .wrapper {
+  @include shadow('both');
+
   position: relative;
 
   display: flex;

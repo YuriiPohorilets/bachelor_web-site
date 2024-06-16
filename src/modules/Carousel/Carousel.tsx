@@ -26,7 +26,7 @@ export const Carousel: React.FC<IProps> = ({ children }) => {
     setPosition(prevState => Math.max(prevState - step, maxPosition));
   };
 
-  const handleDragEnd = (e, info: PanInfo) => {
+  const handleDragEnd = (_, info: PanInfo) => {
     const offset = info.offset.x;
 
     if (offset > 50) {

@@ -17,13 +17,13 @@ const content = {
 
 export const About: React.FC = () => {
   return (
-    <Section shadow="both">
-      <div className={styles.iconWrapper}>
-        <CrownIcon />
-      </div>
-
+    <Section>
       <Container>
         <div className={styles.wrapper}>
+          <div className={styles.iconWrapper}>
+            <CrownIcon />
+          </div>
+
           <h2 className="hidden">{content.title}</h2>
 
           <div className={styles.contentWrapper}>

@@ -9,6 +9,43 @@
   @return $return-value;
 }
 
+@mixin fullScreen($padding) {
+  margin-left: -$padding;
+  width: calc(100% + ($padding * 2));
+}
+
+@mixin shadow($position, $size: 326px) {
+  @if $position == 'top' or $position == 'both' {
+    &::before {
+      @include shadow-pseudo(top, $top-shadow-gradient, $size);
+    }
+  }
+
+  @if $position == 'bottom' or $position == 'both' {
+    &::after {
+      @include shadow-pseudo(bottom, $bottom-shadow-gradient, $size);
+    }
+  }
+}
+
+@mixin shadow-pseudo($align, $gradient, $size) {
+  @include fullScreen($container-padding);
+  content: '';
+  position: absolute;
+  left: 0;
+  z-index: 1;
+
+  height: $size;
+
+  background: $gradient;
+
+  @if $align == 'top' {
+    top: 0;
+  } @else if $align == 'bottom' {
+    bottom: 0;
+  }
+}
+
 @mixin square($size, $radius: 0) {
   width: $size;
   height: $size;

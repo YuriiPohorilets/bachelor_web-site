@@ -7,7 +7,7 @@ interface IProps {
   position?: ['top', 'left'];
 }
 
-export const Pagination: React.FC<IProps> = ({ position }) => {
+export const Pagination: React.FC<IProps> = ({}) => {
   const { controls, length, currentSlide } = useSliderContext();
   const items = new Array(length).fill('');
 

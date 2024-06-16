@@ -1,5 +1,5 @@
-import { GetStaticProps, GetStaticPaths } from 'next';
-import { getPosts } from '@/services/service';
+// import { GetStaticProps, GetStaticPaths } from 'next';
+// import { getPosts } from '@/services/service';
 
 import { HeadPage } from '@/components/common';
 import { Footer } from '@/modules';
@@ -25,7 +25,7 @@ const headContent = {
 };
 
 const HomePage = ({ posts }: { posts: any }) => {
-  // console.log(posts);
+  console.log(posts);
 
   return (
     <>

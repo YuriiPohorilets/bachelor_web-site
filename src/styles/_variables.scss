@@ -5,6 +5,9 @@ $light-grey: #c0c0c0;
 $main: #262626;
 $dark-bg: #1a1a1a;
 
+$top-shadow-gradient: linear-gradient(to bottom, rgb(0, 0, 0, 1), rgba(0, 0, 0, 0) 55%);
+$bottom-shadow-gradient: linear-gradient(to top, rgb(0, 0, 0, 1), rgba(0, 0, 0, 0) 55%);
+
 $font-adobe-garamond-pro: 'Adobe Garamond Pro', serif;
 $font-century-gothic: 'Century Gothic', sans-serif;
 $font-gotham-pro: 'GothamPro', sans-serif;

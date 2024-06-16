@@ -2,23 +2,13 @@
 
 .wrapper {
   position: relative;
-  z-index: 1;
 
   min-height: 1000px;
   height: min(100lvh, 1000px);
 }
 
-.sliderContainer {
-  // clip-path: polygon(
-  //   0 0,
-  //   100% 0,
-  //   100% 100%,
-  //   calc((100% - 512px)) 100%,
-  //   calc((100% - 512px)) calc(100% - 205px),
-  //   512px calc(100% - 205px),
-  //   512px 100%,
-  //   0 100%
-  // );
+.slider {
+  @include shadow('top', 463px);
 }
 
 .slide {

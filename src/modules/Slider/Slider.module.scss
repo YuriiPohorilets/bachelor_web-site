@@ -10,8 +10,7 @@
 }
 
 .fullWidth {
-  margin-left: -$container-padding;
-  width: calc(100% + ($container-padding * 2));
+  @include fullScreen($container-padding);
 }
 
 .list {
