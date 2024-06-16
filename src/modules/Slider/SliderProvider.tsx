@@ -4,7 +4,6 @@ export interface IConfig {
   delay: number;
   duration: number;
   effect: 'fade' | 'slide';
-  direction: number;
   autoplay?: boolean;
 }
 

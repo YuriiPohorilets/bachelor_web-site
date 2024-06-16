@@ -1,0 +1,15 @@
+@import '@/styles/variables', '@/styles/mixins';
+
+.list {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.item {
+  @include square(32px);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

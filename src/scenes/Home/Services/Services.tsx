@@ -47,12 +47,12 @@ export const Services: React.FC = () => {
             length={content.slider.length}
             config={{
               effect: 'slide',
-              delay: 5000,
+              delay: 6000,
               duration: 150,
-              autoplay: true,
+              autoplay: false,
             }}
           >
-            <Slider.Container>
+            <Slider.Container className={styles.sliderContainer}>
               {content.slider.map((item, index) => (
                 <Slider.Slide key={index} className={styles.slide}>
                   <Image

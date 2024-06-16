@@ -6,3 +6,5 @@ export { Address } from './Address/Address';
 export { OrderForm } from './OrderForm/OrderForm';
 export { Slider } from './Slider/Slider';
 export { Benefits } from './Benefits/Benefits';
+export { Carousel } from './Carousel/Carousel';
+export { Card } from './Card/Card';

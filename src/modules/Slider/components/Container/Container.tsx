@@ -4,10 +4,13 @@ import { AnimatePresence, motion } from 'framer-motion';
 import { useSliderContext } from '@/modules/Slider/SliderProvider';
 
 import styles from './Container.module.scss';
+import classNames from 'classnames';
 
-interface IProps extends React.PropsWithChildren {}
+interface IProps extends React.PropsWithChildren {
+  className?: string;
+}
 
-export const Container: React.FC<IProps> = ({ children }) => {
+export const Container: React.FC<IProps> = ({ children, className }) => {
   const { currentSlide, config, length } = useSliderContext();
 
   const variants = {
@@ -19,8 +22,8 @@ export const Container: React.FC<IProps> = ({ children }) => {
 
     slide: {
       enter: { x: '100%', opacity: 0 },
-      exit: { x: '-100%', opacity: 0 },
       center: { x: 0, opacity: 1 },
+      exit: { x: '-100%', opacity: 0 },
     },
   };
 
@@ -37,12 +40,11 @@ export const Container: React.FC<IProps> = ({ children }) => {
   };
 
   return (
-    <div className={styles.wrapper}>
-      <AnimatePresence initial={false} custom={config.direction}>
+    <div className={classNames(styles.wrapper, className)}>
+      <AnimatePresence initial={false}>
         {React.Children.map(children, (child, index) => (
           <motion.div
             variants={variants[config.effect]}
-            custom={config.direction}
             initial="enter"
             exit="exit"
             animate={getVariant(index)}
