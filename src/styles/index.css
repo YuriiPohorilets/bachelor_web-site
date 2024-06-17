@@ -92,7 +92,8 @@ body {
   background-color: #1a1a1a;
   background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
     url('../assets/images/bg.jpeg');
-  background-size: contain;
+  /* background-size: contain; */
+  /* background-attachment: fixed; */
   background-repeat: repeat-y;
 }
 

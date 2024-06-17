@@ -1,0 +1,44 @@
+@import '@/styles/variables', '@/styles/mixins';
+
+.section {
+  position: relative;
+
+  background-image: url('../../../assets/images/about-page/hero/bg.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  padding-top: 445px;
+  padding-bottom: 140px;
+  min-height: 1080px;
+  height: min(100lvh, 1080px);
+}
+
+.titleWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.title {
+  font-family: $font-cormorantUnicase;
+  font-size: 130px;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+}
+
+.subtitle,
+.description {
+  text-align: center;
+  font-size: 24px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
