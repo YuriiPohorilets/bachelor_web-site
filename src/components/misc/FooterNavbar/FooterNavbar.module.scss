@@ -1,0 +1,10 @@
+@import '@/styles/variables', '@/styles/mixins';
+
+.list {
+  flex-wrap: wrap;
+  max-width: 380px;
+}
+
+.item {
+  font-weight: 300;
+}

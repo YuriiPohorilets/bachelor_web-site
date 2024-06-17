@@ -1,0 +1,13 @@
+@import '@/styles/variables', '@/styles/mixins';
+
+.list {
+  display: flex;
+}
+
+.row {
+  flex-direction: row;
+}
+
+.column {
+  flex-direction: column;
+}

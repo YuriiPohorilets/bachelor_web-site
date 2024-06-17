@@ -1,0 +1,14 @@
+@import '@/styles/variables', '@/styles/mixins';
+
+.link {
+  padding-block: 10px;
+
+  color: $white;
+  font-size: 18px;
+
+  transition: color $duration-sm $easing-base;
+
+  @include hover {
+    color: $golden;
+  }
+}

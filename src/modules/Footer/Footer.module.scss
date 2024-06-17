@@ -1,0 +1,116 @@
+@import '@/styles/variables', '@/styles/mixins';
+
+.footer {
+  position: relative;
+
+  padding-top: 140px;
+  padding-bottom: 24px;
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 0;
+
+    width: 100%;
+    height: 574px;
+
+    background: linear-gradient(
+      to top,
+      rgb(0, 0, 0, 1),
+      rgba(0, 0, 0, 0.64) 46%,
+      rgba(0, 0, 0, 0) 91%
+    );
+  }
+}
+
+.wrapper {
+  position: relative;
+  z-index: 1;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 38px;
+
+  min-height: 670px;
+  height: min(100%, 670px);
+}
+
+.innerWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 72px;
+
+  width: 100%;
+}
+
+.contentWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 66px;
+}
+
+.logoWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.iconWrapper {
+  width: min(100%, 73px);
+
+  & > svg {
+    @include square(100%);
+  }
+}
+
+.logo {
+  margin-top: -10px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  font-family: $font-cormorantUnicase;
+  font-size: 67px;
+  letter-spacing: -0.01em;
+  font-weight: 500;
+  text-transform: uppercase;
+  text-align: center;
+
+  & > span {
+    font-family: $font-gotham-pro;
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: 0.4em;
+  }
+}
+
+.btnWrapper {
+  margin-top: 66px;
+  width: 100%;
+}
+
+.navList {
+  display: flex;
+  justify-content: space-between;
+
+  width: min(100%, 1050px);
+}
+
+.navItem {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.navLabel {
+  font-size: 20px;
+  color: $default-text;
+  text-transform: uppercase;
+}

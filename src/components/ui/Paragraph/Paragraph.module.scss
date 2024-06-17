@@ -1,0 +1,22 @@
+@import '@/styles/variables';
+
+.text {
+  color: $white;
+  font-family: $font-century-gothic;
+  font-size: 18px;
+  letter-spacing: 0.01em;
+  font-weight: 400;
+  text-align: justify;
+  white-space: pre-line;
+}
+
+.initialLetter::first-letter {
+  margin-bottom: -0.1em;
+  float: left;
+
+  font-size: 6.5em;
+  font-family: $font-cormorantUnicase;
+  font-weight: 500;
+  line-height: 0.75;
+  text-transform: uppercase;
+}

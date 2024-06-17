@@ -1,0 +1,90 @@
+@function clamp-calc($min-width, $max-width, $size-at-min-width, $size-at-max-width) {
+  $slope: ($size-at-max-width - $size-at-min-width) / ($max-width - $min-width);
+  $y-axis-intersection: -1 * $min-width * $slope + $size-at-min-width;
+  $return-value: clamp(
+    #{$size-at-min-width},
+    #{$y-axis-intersection} + #{$slope} * 100vw,
+    #{$size-at-max-width}
+  );
+  @return $return-value;
+}
+
+@mixin fullScreen($padding) {
+  margin-left: -$padding;
+  width: calc(100% + ($padding * 2));
+}
+
+@mixin shadow($position, $size: 326px) {
+  @if $position == 'top' or $position == 'both' {
+    &::before {
+      @include shadow-pseudo(top, $top-shadow-gradient, $size);
+    }
+  }
+
+  @if $position == 'bottom' or $position == 'both' {
+    &::after {
+      @include shadow-pseudo(bottom, $bottom-shadow-gradient, $size);
+    }
+  }
+}
+
+@mixin shadow-pseudo($align, $gradient, $size) {
+  @include fullScreen($container-padding);
+  content: '';
+  position: absolute;
+  left: 0;
+  z-index: 1;
+
+  height: $size;
+
+  background: $gradient;
+
+  @if $align == 'top' {
+    top: 0;
+  } @else if $align == 'bottom' {
+    bottom: 0;
+  }
+}
+
+@mixin square($size, $radius: 0) {
+  width: $size;
+  height: $size;
+
+  @if $radius != 0 {
+    border-radius: $radius;
+  }
+}
+
+@mixin hover {
+  &:hover {
+    @content;
+  }
+
+  &:focus-visible {
+    @content;
+  }
+}
+
+@mixin md {
+  @media (min-width: #{$screen-md-min}) {
+    @content;
+  }
+}
+
+@mixin lg {
+  @media (min-width: #{$screen-lg-min}) {
+    @content;
+  }
+}
+
+@mixin xl {
+  @media (min-width: #{$screen-xl-min}) {
+    @content;
+  }
+}
+
+@mixin xxl {
+  @media (min-width: #{$screen-xxl-min}) {
+    @content;
+  }
+}

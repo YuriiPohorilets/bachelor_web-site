@@ -1,0 +1,37 @@
+@import '@/styles/variables', '@/styles/mixins';
+
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding-top: 14px;
+  padding-bottom: 13px;
+  width: 100%;
+
+  font-size: 20px;
+  letter-spacing: 0.15em;
+
+  border: none;
+
+  transition: color $duration-sm $easing-base;
+
+  cursor: pointer;
+}
+
+.light {
+  color: $dark-bg;
+  background-color: $white;
+
+  @include hover {
+    color: $golden;
+  }
+}
+
+.accent {
+  color: $white;
+  background-color: $golden;
+
+  @include hover {
+  }
+}

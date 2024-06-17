@@ -1,0 +1,60 @@
+@import '@/styles/variables', '@/styles/mixins';
+
+.wrapper {
+  position: absolute;
+  top: 200px;
+  left: 200px;
+  z-index: 10;
+}
+
+.list {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 11px;
+}
+
+.item {
+  @include square(20px, 50%);
+}
+
+.btn {
+  @include square(100%);
+  position: relative;
+
+  border: none;
+  border-radius: inherit;
+  background-color: $light-grey;
+
+  cursor: pointer;
+
+  transition: scale $duration-sm $easing-base;
+
+  &:hover:not(.active),
+  &:focus-visible:not(.active) {
+    scale: 1.1;
+  }
+}
+
+.btn::after {
+  @include square(calc(100% - 4px));
+
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 1;
+
+  translate: -50% -50%;
+
+  border-radius: inherit;
+  background-color: $main;
+
+  transition: opacity $duration-sm $easing-base;
+}
+
+.btn.active {
+  &::after {
+    opacity: 0;
+  }
+}

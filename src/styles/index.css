@@ -1,0 +1,180 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Unicase:wght@400;500;600;700&display=swap');
+
+@font-face {
+  font-family: 'Adobe Garamond Pro';
+  src: url('../assets/fonts/AdobeGaramondPro/AGaramondProRegular.eot');
+  src: url('../assets/fonts/AdobeGaramondPro/AGaramondProRegular.eot?#iefix')
+      format('embedded-opentype'),
+    url('../assets/fonts/AdobeGaramondPro/AGaramondProRegular.woff') format('woff'),
+    url('../assets/fonts/AdobeGaramondPro/AGaramondProRegular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Century Gothic';
+  src: url('../assets/fonts/CenturyGothic/CenturyGothicRegular.eot');
+  src: url('../assets/fonts/CenturyGothic/CenturyGothicRegular.eot?#iefix')
+      format('embedded-opentype'),
+    url('../assets/fonts/CenturyGothic/CenturyGothicRegular.woff') format('woff'),
+    url('../assets/fonts/CenturyGothic/CenturyGothicRegular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Century Gothic';
+  src: url('../assets/fonts/CenturyGothic/CenturyGothicBold.eot');
+  src: url('../assets/fonts/CenturyGothic/CenturyGothicBold.eot?#iefix') format('embedded-opentype'),
+    url('../assets/fonts/CenturyGothic/CenturyGothicBold.woff') format('woff'),
+    url('../assets/fonts/CenturyGothic/CenturyGothicBold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'GothamPro';
+  src: url('../assets/fonts/GothamPro/GothamProRegular.eot');
+  src: url('../assets/fonts/GothamPro/GothamProRegular.eot?#iefix') format('embedded-opentype'),
+    url('../assets/fonts/GothamPro/GothamProRegular.woff') format('woff'),
+    url('../assets/fonts/GothamPro/GothamProRegular.ttf') format('truetype');
+  font-style: normal;
+  font-weight: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'GothamPro';
+  src: url('../assets/fonts/GothamPro/GothamProLight.eot');
+  src: url('../assets/fonts/GothamPro/GothamProLight.eot?#iefix') format('embedded-opentype'),
+    url('../assets/fonts/GothamPro/GothamProLight.woff') format('woff'),
+    url('../assets/fonts/GothamPro/GothamProLight.ttf') format('truetype');
+  font-style: normal;
+  font-weight: 200;
+  font-display: swap;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+
+  ::-webkit-scrollbar {
+    display: none;
+  }
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'GothamPro', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  min-height: 100vh;
+  scroll-behavior: smooth;
+  overscroll-behavior-y: none;
+
+  text-rendering: optimizeSpeed;
+  color: #ffffff;
+  line-height: normal;
+  font-weight: 400;
+  font-size: 18px;
+
+  background-color: #1a1a1a;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    url('../assets/images/bg.jpeg');
+  background-size: contain;
+  background-repeat: repeat-y;
+}
+
+ul[class],
+ol[class] {
+  padding: 0;
+}
+
+body,
+h1,
+h2,
+h3,
+p,
+ul[class],
+ol[class],
+li {
+  margin: 0;
+}
+
+ul[class],
+ol[class] {
+  list-style: none;
+}
+
+a {
+  color: currentColor;
+  text-decoration: none;
+}
+
+img,
+video {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+.hidden {
+  position: absolute;
+  margin: -1px;
+  padding: 0;
+  width: 1px;
+  height: 1px;
+  white-space: nowrap;
+  word-wrap: normal;
+  border: 0;
+  clip: rect(0 0 0 0);
+  clip-path: inset(100%);
+  overflow: hidden;
+}
+
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-smooth iframe {
+  pointer-events: none;
+}
