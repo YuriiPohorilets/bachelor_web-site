@@ -1,0 +1,60 @@
+@import '@/styles/variables', '@/styles/mixins';
+
+.wrapper {
+  @include shadow('top');
+  position: relative;
+
+  display: flex;
+  justify-content: space-between;
+  gap: 32px;
+
+  padding-top: 145px;
+  min-height: 1080px;
+  height: min(100lvh, 1080px);
+}
+
+.mediaWrapper {
+  margin-left: -$container-padding-lg;
+  width: min(100%, 1106px);
+  height: 609px;
+
+  background-color: white;
+}
+
+.contentWrapper {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  gap: 94px;
+
+  width: min(100%, 435px);
+}
+
+.description {
+  padding-right: 8px;
+}
+
+.imgWrapper {
+  @include square(100%);
+  margin-right: -8px;
+
+  flex: 1;
+  overflow: hidden;
+}
+
+.img {
+  @include square(100%);
+  object-fit: cover;
+  object-position: top;
+}
+
+.quote {
+  position: absolute;
+  bottom: 96px;
+  left: 0;
+
+  translate: calc(-100% + 84px) 0;
+
+  width: 961px;
+}

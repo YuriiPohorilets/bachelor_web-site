@@ -29,7 +29,7 @@
 }
 
 @mixin shadow-pseudo($align, $gradient, $size) {
-  @include fullScreen($container-padding);
+  @include fullScreen($container-padding-lg);
   content: '';
   position: absolute;
   left: 0;

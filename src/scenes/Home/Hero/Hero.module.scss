@@ -7,11 +7,36 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  gap: 64px;
 
-  padding-top: 264px;
-  padding-bottom: 50px;
-  min-height: 1220px;
-  height: min(100lvh, 1220px);
+  padding-top: 371px;
+  padding-bottom: 48px;
+  min-height: 812px;
+  height: min(100lvh, 812px);
+
+  @include md {
+    padding-top: 180px;
+    min-height: 908px;
+    height: min(100lvh, 908px);
+  }
+
+  @include lg {
+    padding-top: 208px;
+    min-height: 860px;
+    height: min(100lvh, 860px);
+  }
+
+  @include xl {
+    min-height: 1040px;
+    height: min(100lvh, 1040px);
+  }
+
+  @include xxl {
+    padding-top: 264px;
+    padding-bottom: 50px;
+    min-height: 1220px;
+    height: min(100lvh, 1220px);
+  }
 }
 
 .sliderWrapper {
@@ -35,16 +60,26 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  gap: 170px;
+  gap: 98px;
 
-  height: calc(100% - 300px);
+  @include xl {
+    height: calc(100% - 300px);
+  }
+
+  @include xxl {
+    gap: 170px;
+  }
 }
 
 .titleWrapper {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 8px;
+  gap: 2px;
+
+  @include lg {
+    gap: 8px;
+  }
 }
 
 .title {
@@ -54,6 +89,7 @@
   gap: 3px;
 
   font-size: 117px;
+  font-size: clamp-calc($screen-sm-min, $screen-xxl-min, 34px, 117px);
   letter-spacing: 0.03em;
   font-weight: 500;
   font-family: $font-cormorantUnicase;
@@ -61,7 +97,7 @@
   text-align: center;
 
   & > span {
-    font-size: 57px;
+    font-size: clamp-calc($screen-sm-min, $screen-xxl-min, 16px, 57px);
     letter-spacing: 0.35em;
     font-family: $font-gotham-pro;
     color: currentColor;
@@ -70,7 +106,7 @@
 }
 
 .iconWrapper {
-  width: min(100%, 142px);
+  width: min(100%, clamp-calc($screen-sm-min, $screen-xxl-min, 41px, 142px));
 
   & > svg {
     @include square(100%);
@@ -78,7 +114,7 @@
 }
 
 .description {
-  font-size: 24px;
+  font-size: clamp-calc($screen-sm-min, $screen-xxl-min, 20px, 24px);
   letter-spacing: 0.06em;
   text-align: center;
   text-transform: uppercase;

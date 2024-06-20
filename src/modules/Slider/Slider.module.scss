@@ -10,7 +10,7 @@
 }
 
 .fullWidth {
-  @include fullScreen($container-padding);
+  @include fullScreen($container-padding-lg);
 }
 
 .list {

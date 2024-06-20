@@ -1,0 +1,41 @@
+@import '@/styles/variables', '@/styles/mixins';
+
+.wrapper {
+  position: relative;
+
+  padding-bottom: 154px;
+  min-height: 1080px;
+  height: min(100lvh, 1080px);
+}
+
+.imgWrapper {
+  position: relative;
+
+  width: min(100%, 1311px);
+  height: 926px;
+}
+
+.img {
+  @include square(100%);
+  object-fit: cover;
+  object-position: center;
+}
+
+.contentWrapper {
+  position: absolute;
+  top: 249px;
+  right: 0;
+
+  display: flex;
+  gap: 32px;
+
+  padding-right: 20px;
+  width: min(100%, 926px);
+}
+
+.description {
+  flex: 1;
+
+  letter-spacing: normal;
+  line-height: 127.778%;
+}

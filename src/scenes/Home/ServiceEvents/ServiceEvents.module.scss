@@ -25,8 +25,8 @@
 }
 
 .imgWrapper {
-  margin-left: -$container-padding;
-  width: calc(100% + ($container-padding * 2));
+  margin-left: -$container-padding-lg;
+  width: calc(100% + ($container-padding-lg * 2));
 
   clip-path: polygon(
     0 0,

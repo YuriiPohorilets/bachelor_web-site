@@ -4,34 +4,63 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 40px;
+  gap: 16px;
+  flex-wrap: wrap;
+
+  @include lg {
+    gap: 40px;
+    flex-wrap: nowrap;
+  }
 }
 
 .item {
   position: relative;
 
-  padding-inline: 6px;
-  width: 135px;
-
   text-align: center;
   font-family: $font-century-gothic;
-  font-size: 16px;
+  font-size: 14px;
   color: $white;
   letter-spacing: -0.02em;
-  white-space: pre-line;
 
   &::after {
     content: '';
-
     position: absolute;
-    bottom: -8px;
-    left: 50%;
+    bottom: 50%;
+    right: -4px;
 
-    translate: -50% 100%;
+    translate: 75% 50%;
+    rotate: -65deg;
 
-    width: 35%;
+    width: 16px;
     height: 1px;
 
+    border-radius: 2px;
     background-color: $golden;
+  }
+
+  @include lg {
+    padding-inline: 6px;
+    width: 135px;
+
+    font-size: 16px;
+    white-space: pre-line;
+
+    &::after {
+      bottom: -8px;
+      left: 50%;
+
+      translate: -50% 100%;
+      rotate: 0deg;
+
+      width: 35%;
+    }
+  }
+}
+
+.item:last-child:after {
+  display: none;
+
+  @include lg {
+    display: block;
   }
 }
