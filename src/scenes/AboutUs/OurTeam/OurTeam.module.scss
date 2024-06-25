@@ -1,0 +1,44 @@
+@import '@/styles/variables', '@/styles/mixins';
+
+.section {
+  background-image: url('../../../assets/images/about-page/our-team/team.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.wrapper {
+  position: relative;
+
+  padding-top: 178px;
+  min-height: 1080px;
+  height: min(100lvh, 1080px);
+}
+
+.title {
+  position: relative;
+
+  text-align: center;
+  font-size: 38px;
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+
+  margin-inline: auto;
+  width: max-content;
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+
+    translate: -50% 0;
+
+    width: 60%;
+    height: 2px;
+
+    background-color: $golden;
+    border-radius: 2px;
+  }
+}

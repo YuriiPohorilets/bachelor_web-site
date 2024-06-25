@@ -19,6 +19,7 @@ export const Story: React.FC = () => {
       <Container>
         <div className={styles.wrapper}>
           <h2 className="hidden">Our story</h2>
+          <span className={styles.label}>Here`s a little story</span>
 
           <div className={styles.imgWrapper}>
             <Image
@@ -29,6 +30,8 @@ export const Story: React.FC = () => {
               priority={false}
               className={styles.img}
             />
+
+            <span className={styles.caption}>Photo of construction</span>
           </div>
 
           <div className={styles.contentWrapper}>

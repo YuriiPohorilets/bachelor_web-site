@@ -1,7 +1,9 @@
 import { HeadPage } from '@/components/common';
 import { BackgroundWrapper } from '@/components/misc';
 import { Footer } from '@/modules';
-import { Hero, About, Story } from '@/scenes/AboutUs';
+import { Hero, About, Story, OurTeam, Menu, Community } from '@/scenes/AboutUs';
+
+import BgImg from '@/assets/images/about-page/bg.jpg';
 
 const headContent = {
   title: 'About us - Bachelor Bunny Gourmet',
@@ -16,8 +18,11 @@ const AboutUsPage = () => {
       <Hero />
       <About />
       <Story />
+      <OurTeam />
 
-      <BackgroundWrapper bgUrl={''}>
+      <BackgroundWrapper bgUrl={BgImg.src}>
+        <Menu />
+        <Community />
         <Footer />
       </BackgroundWrapper>
     </>

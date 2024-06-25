@@ -1,8 +1,8 @@
 @import '@/styles/variables', '@/styles/mixins';
 
 .section {
-  padding-top: 32px;
-  padding-bottom: 240px;
+  padding-top: 214px;
+  padding-bottom: 60px;
 }
 
 .wrapper {
@@ -11,8 +11,8 @@
 
 .title {
   position: absolute;
-  top: 50px;
-  left: 0;
+  top: 82px;
+  left: 100px;
   z-index: 2;
 
   font-size: 38px;

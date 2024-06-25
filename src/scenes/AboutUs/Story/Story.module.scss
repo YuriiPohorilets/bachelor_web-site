@@ -8,6 +8,17 @@
   height: min(100lvh, 1080px);
 }
 
+.label {
+  position: absolute;
+  bottom: 177px;
+  right: 20px;
+
+  font-family: $font-cormorantUnicase;
+  font-size: 24px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
 .imgWrapper {
   position: relative;
 
@@ -19,6 +30,18 @@
   @include square(100%);
   object-fit: cover;
   object-position: center;
+}
+
+.caption {
+  position: absolute;
+  bottom: 30px;
+  left: 47px;
+
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: -0.01em;
 }
 
 .contentWrapper {

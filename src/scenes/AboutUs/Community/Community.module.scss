@@ -1,0 +1,30 @@
+@import '@/styles/variables';
+
+.section {
+  padding-top: 100px;
+  padding-bottom: 95px;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.contentWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 35px;
+
+  width: min(100%, 437px);
+}
+
+.title {
+  font-family: $font-cormorantUnicase;
+  font-size: 54px;
+  letter-spacing: -0.01em;
+  text-align: center;
+  font-weight: 700;
+}

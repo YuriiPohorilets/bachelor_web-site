@@ -1,14 +1,19 @@
+import Link from 'next/link';
+
 import { navList } from '@/constants/navigation';
-import { Navbar } from '@/modules';
 
 import styles from './FooterNavbar.module.scss';
 
 export const FooterNavbar: React.FC = () => (
-  <Navbar>
-    <Navbar.List direction="row" className={styles.list}>
+  <nav>
+    <ul className={styles.list}>
       {navList.map(item => (
-        <Navbar.Item key={item.id} item={item} className={styles.item} />
+        <li key={item.id} className={styles.item}>
+          <Link href={item.link} className={styles.link}>
+            {item.label}
+          </Link>
+        </li>
       ))}
-    </Navbar.List>
-  </Navbar>
+    </ul>
+  </nav>
 );
