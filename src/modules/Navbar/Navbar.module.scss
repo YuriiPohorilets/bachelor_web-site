@@ -1,1 +1,60 @@
 @import '@/styles/variables', '@/styles/mixins';
+
+.nav {
+  align-self: stretch;
+  display: flex;
+}
+
+.list {
+  display: flex;
+  gap: 146px;
+}
+
+.item {
+  display: flex;
+}
+
+.link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: $white;
+  font-family: $font-gotham-pro;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-transform: uppercase;
+
+  transition: color $duration-sm $easing-base;
+
+  @include hover {
+    color: $golden;
+  }
+}
+
+.sublist {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2px;
+}
+
+.sublink {
+  padding-block: 10px;
+  display: block;
+
+  font-family: $font-gotham-pro;
+
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+
+  transition: color $duration-sm $easing-base;
+
+  @include hover {
+    color: $golden;
+  }
+}

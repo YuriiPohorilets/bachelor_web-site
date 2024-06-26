@@ -1,0 +1,80 @@
+@import '@/styles/variables', '@/styles/mixins';
+
+.wrapper {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  padding: 0;
+
+  color: $white;
+
+  border: none;
+  background-color: transparent;
+
+  cursor: pointer;
+
+  transition: color $duration-sm $easing-base;
+
+  @include hover {
+    color: $golden;
+  }
+}
+
+.btn[aria-expanded='true'] {
+  color: $golden;
+
+  & .icon {
+    rotate: 0deg;
+  }
+}
+
+.label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: currentColor;
+  font-family: $font-gotham-pro;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-transform: uppercase;
+}
+
+.icon {
+  @include square(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  rotate: 180deg;
+
+  color: currentColor;
+
+  transition: rotate $duration-sm $easing-base;
+
+  & > svg {
+    @include square(100%);
+  }
+}
+
+.contentWrapper {
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+
+  translate: 0 100%;
+
+  width: max-content;
+}
