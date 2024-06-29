@@ -1,0 +1,64 @@
+@import '@/styles/mixins', '@/styles/variables';
+
+.section {
+  @include shadow(both);
+
+  padding-inline: 16px;
+
+  background-image: url('../../../assets/images/home/about_bg.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  @include md {
+    padding-inline: 32px;
+  }
+
+  @include lg {
+    padding-inline: 64px;
+  }
+}
+
+.wrapper {
+  @include fullHeight(1080px);
+
+  position: relative;
+  z-index: 1;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 132px;
+}
+
+.contentWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 204px;
+
+  width: min(100%, 800px);
+}
+
+.quote {
+  text-transform: uppercase;
+}
+
+.mediaWrapper {
+  width: min(100%, 546px);
+}
+
+.img {
+  @include square(100%);
+  object-fit: cover;
+  object-position: center;
+}
+
+.logoWrapper {
+  position: absolute;
+  bottom: 209px;
+  right: 90px;
+  z-index: 0;
+
+  width: min(100%, 340px);
+  opacity: 0.03;
+}

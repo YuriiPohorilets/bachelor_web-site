@@ -1,23 +1,13 @@
+import Head from 'next/head';
+
+import { Favicon } from '@/components/common';
+import { About, Hero, Services } from '@/scenes/Home';
+import { BgWrapper } from '@/components/misc';
+
+import FooterImg from '@/assets/images/home/footer_bg.jpg';
+
 // import { GetStaticProps, GetStaticPaths } from 'next';
 // import { getPosts } from '@/services/service';
-
-import { HeadPage } from '@/components/common';
-import { Footer } from '@/modules';
-import { BackgroundWrapper } from '@/components/misc';
-import {
-  Hero,
-  About,
-  Services,
-  ServiceGrabAndGo,
-  ServiceDelivery,
-  ServiceEvents,
-  Advantage,
-  OurClients,
-  Community,
-} from '@/scenes/Home';
-
-import AboutBgImg from '@/assets/images/home-page/about/bg.jpg';
-import FooterBgImg from '@/assets/images/home-page/footer-bg.jpg';
 
 const headContent = {
   title: 'Home - Bachelor Bunny Gourmet',
@@ -25,26 +15,20 @@ const headContent = {
 };
 
 const HomePage = ({ posts }: { posts: any }) => {
-  console.log(posts);
-
   return (
     <>
-      <HeadPage title={headContent.title} description={headContent.description} />
+      <Head>
+        <title>{headContent.title}</title>
+        <meta name="description" content={headContent.description} />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <Favicon />
+      </Head>
 
       <Hero />
-      <BackgroundWrapper bgUrl={AboutBgImg.src}>
-        <About />
-      </BackgroundWrapper>
+      <About />
       <Services />
-      <ServiceGrabAndGo />
-      <ServiceDelivery />
-      <ServiceEvents />
-      <Advantage />
-      <OurClients />
-      <BackgroundWrapper bgUrl={FooterBgImg.src}>
-        <Community />
-        <Footer />
-      </BackgroundWrapper>
+
+      <BgWrapper imageUrl={FooterImg.src}>FOOTER</BgWrapper>
     </>
   );
 };

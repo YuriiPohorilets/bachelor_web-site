@@ -1,0 +1,146 @@
+@import '@/styles/mixins', '@/styles/variables';
+
+.section {
+  @include shadow(top, 463px);
+
+  &::before {
+    z-index: 10;
+  }
+}
+
+.wrapper {
+  @include fullHeight(1080px);
+}
+
+.swiper {
+  @include fullHeight(1080px);
+}
+
+.slideContentWrapper {
+  @include square(100%);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10;
+
+  padding-top: 250px;
+}
+
+.slideTitle {
+  text-align: center;
+  font-family: $font-cormorantUnicase;
+  font-size: 150px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  white-space: pre-line;
+}
+
+.slideDescription {
+  flex: 1;
+
+  text-align: center;
+  font-family: $font-century-gothic;
+}
+
+.slideImg {
+  @include square(100%);
+  object-fit: cover;
+  object-position: center;
+
+  pointer-events: none;
+  user-select: none;
+
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 70% 100%, 70% 80%, 30% 80%, 30% 100%, 0 100%);
+}
+
+.pagination {
+  position: absolute;
+  bottom: 94px !important;
+  right: 217px !important;
+  left: auto !important;
+  top: auto !important;
+  z-index: 300;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 11px;
+
+  width: fit-content !important;
+}
+
+.sliderBullets {
+  @include square(20px);
+  display: block;
+
+  border: 1px solid $light-grey;
+  border-radius: 50%;
+
+  background-color: $main;
+
+  transition: background-color $duration-sm $easing-base, scale $duration-sm $easing-base;
+
+  cursor: pointer;
+
+  @include hover {
+    scale: 1.05;
+  }
+}
+
+.sliderBulletsActive {
+  background-color: $light-grey;
+
+  @include hover {
+    scale: 1;
+  }
+}
+
+.navigation {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  z-index: 500;
+
+  translate: -50% 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 64px;
+
+  padding-inline: 20px;
+  padding-block: 39px;
+  width: min(100%, 898px);
+}
+
+.navigationPrev,
+.navigationNext {
+  @include square(130px);
+  min-width: 130px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: $golden;
+
+  border: none;
+  background-color: transparent;
+
+  cursor: pointer;
+
+  transition: color $duration-sm $easing-base;
+
+  @include hover {
+    color: $white;
+  }
+}
+
+.navigationPrev {
+  & > svg {
+    rotate: 180deg;
+  }
+}
+
+.navigationNext {
+}

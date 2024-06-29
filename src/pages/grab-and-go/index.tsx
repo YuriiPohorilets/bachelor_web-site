@@ -1,5 +1,6 @@
-import { HeadPage } from '@/components/common';
-import { Hero, Faq } from '@/scenes/GrabAndGo';
+import Head from 'next/head';
+
+import { Favicon } from '@/components/common';
 
 const headContent = {
   title: 'Grab & Go - Bachelor Bunny Gourmet',
@@ -10,10 +11,12 @@ const headContent = {
 const GrabAndGoPage = () => {
   return (
     <>
-      <HeadPage title={headContent.title} description={headContent.description} />
-
-      <Hero />
-      <Faq />
+      <Head>
+        <title>{headContent.title}</title>
+        <meta name="description" content={headContent.description} />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <Favicon />
+      </Head>
     </>
   );
 };

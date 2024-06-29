@@ -1,11 +1,7 @@
-@import '@/styles/variables', '@/styles/mixins';
+@import '@/styles/variables';
 
 .container {
   margin-inline: auto;
-  padding-inline: $container-padding-sm;
-  width: min(100%, 2560px);
 
-  @include lg {
-    padding-inline: $container-padding-lg;
-  }
+  width: min(100%, $screen-xxl-min);
 }

@@ -9,9 +9,9 @@
   @return $return-value;
 }
 
-@mixin fullScreen($padding) {
-  margin-left: -$padding;
-  width: calc(100% + ($padding * 2));
+@mixin fullHeight($maxHeight: 1080px) {
+  min-height: $maxHeight;
+  height: min(100lvh, $maxHeight);
 }
 
 @mixin shadow($position, $size: 326px) {
@@ -29,7 +29,7 @@
 }
 
 @mixin shadow-pseudo($align, $gradient, $size) {
-  @include fullScreen($container-padding-lg);
+  @include square(100%);
   content: '';
   position: absolute;
   left: 0;

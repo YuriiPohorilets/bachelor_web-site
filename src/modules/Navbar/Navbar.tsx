@@ -1,37 +1,53 @@
-import Link from 'next/link';
-
-import { headerNavList } from '@/constants/navigation';
-import { DropdownButton } from '@/components/misc';
+import { INavItem, navList } from '@/constants/navigation';
+import { Dropdown } from './components/Dropdown/Dropdown';
+import { LinkItem } from './components/LinkItem/LinkItem';
 
 import styles from './Navbar.module.scss';
+import linkStyle from './components/LinkItem/LinkItem.module.scss';
 
-interface IProps {}
+const groupedNavItems = navList.reduce((acc, item) => {
+  if (item.submenu) {
+    if (!acc[item.submenu]) {
+      acc[item.submenu] = [];
+    }
+    (acc[item.submenu] as INavItem[]).push(item);
+  } else {
+    acc[item.id] = item;
+  }
+  return acc;
+}, {} as Record<string, INavItem[] | INavItem>);
 
-export const Navbar: React.FC<IProps> = () => {
+export const Navbar: React.FC = () => {
   return (
     <nav className={styles.nav}>
       <ul className={styles.list}>
-        {headerNavList.map(item => (
-          <li key={item.id} className={styles.item}>
-            {item.dropdown ? (
-              <DropdownButton label={item.label}>
-                <ul className={styles.sublist}>
-                  {item.dropdown.map(subitem => (
-                    <li key={subitem.id}>
-                      <Link href={subitem.link!} className={styles.sublink}>
-                        {subitem.label}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              </DropdownButton>
-            ) : (
-              <Link href={item.link!} className={styles.link}>
-                {item.label}
-              </Link>
-            )}
-          </li>
-        ))}
+        {Object.entries(groupedNavItems).map(([key, item]) => {
+          if (Array.isArray(item)) {
+            return (
+              <li key={key} className={styles.item}>
+                <Dropdown key={key} label={key} className={linkStyle.link}>
+                  <ul className={styles.sublist}>
+                    {item.map(subItem => (
+                      <li key={subItem.id} className={styles.item}>
+                        <LinkItem
+                          label={subItem.label}
+                          href={subItem.link}
+                          className={styles.sublink}
+                        />
+                      </li>
+                    ))}
+                  </ul>
+                </Dropdown>
+              </li>
+            );
+          } else {
+            return (
+              <li key={item.id} className={styles.item}>
+                <LinkItem label={item.label} href={item.link} />
+              </li>
+            );
+          }
+        })}
       </ul>
     </nav>
   );

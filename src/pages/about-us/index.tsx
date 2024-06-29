@@ -1,9 +1,6 @@
-import { HeadPage } from '@/components/common';
-import { BackgroundWrapper } from '@/components/misc';
-import { Footer } from '@/modules';
-import { Hero, About, Story, OurTeam, Menu, Community } from '@/scenes/AboutUs';
+import Head from 'next/head';
 
-import BgImg from '@/assets/images/about-page/bg.jpg';
+import { Favicon } from '@/components/common';
 
 const headContent = {
   title: 'About us - Bachelor Bunny Gourmet',
@@ -13,18 +10,12 @@ const headContent = {
 const AboutUsPage = () => {
   return (
     <>
-      <HeadPage title={headContent.title} description={headContent.description} />
-
-      <Hero />
-      <About />
-      <Story />
-      <OurTeam />
-
-      <BackgroundWrapper bgUrl={BgImg.src}>
-        <Menu />
-        <Community />
-        <Footer />
-      </BackgroundWrapper>
+      <Head>
+        <title>{headContent.title}</title>
+        <meta name="description" content={headContent.description} />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <Favicon />
+      </Head>
     </>
   );
 };
