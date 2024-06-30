@@ -1,5 +1,7 @@
+import styles from './Textarea.module.scss';
+
 interface IProps {}
 
 export const Textarea: React.FC<IProps> = () => {
-  return <div>Textarea</div>;
+  return <div className={styles.wrapper}>Textarea</div>;
 };

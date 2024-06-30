@@ -19,7 +19,7 @@ const groupedNavItems = navList.reduce((acc, item) => {
 
 export const Navbar: React.FC = () => {
   return (
-    <nav className={styles.nav}>
+    <nav>
       <ul className={styles.list}>
         {Object.entries(groupedNavItems).map(([key, item]) => {
           if (Array.isArray(item)) {

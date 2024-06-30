@@ -1,6 +1,7 @@
 import Head from 'next/head';
 
 import { Favicon } from '@/components/common';
+import { Hero } from '@/scenes/AboutUs';
 
 const headContent = {
   title: 'About us - Bachelor Bunny Gourmet',
@@ -16,6 +17,8 @@ const AboutUsPage = () => {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <Favicon />
       </Head>
+
+      <Hero />
     </>
   );
 };

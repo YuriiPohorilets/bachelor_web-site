@@ -1,12 +1,22 @@
 @import '@/styles/variables', '@/styles/mixins';
 
-.nav {
-}
-
 .item {
   position: relative;
 
   display: flex;
+}
+
+.item:nth-of-type(1) {
+  order: 0;
+}
+.item:nth-of-type(2) {
+  order: 2;
+}
+.item:nth-of-type(3) {
+  order: 1;
+}
+.item:nth-of-type(4) {
+  order: 3;
 }
 
 .list {

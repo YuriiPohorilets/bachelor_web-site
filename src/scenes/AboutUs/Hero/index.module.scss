@@ -1,0 +1,51 @@
+@import '@/styles/mixins', '@/styles/variables';
+
+.section {
+  background-image: url('../../../assets/images/about/hero_bg.jpg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.container {
+  padding-inline: 48px;
+}
+
+.wrapper {
+  @include fullHeight(1080px);
+  padding-top: 443px;
+  padding-bottom: 140px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: 80px;
+}
+
+.titleWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.title {
+  text-align: center;
+  font-family: $font-cormorantUnicase;
+  font-size: 130px;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+}
+
+.subtitle,
+.description {
+  text-align: center;
+  font-size: 24px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.description {
+}

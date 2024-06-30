@@ -26,6 +26,8 @@ const headContent = {
 };
 
 const HomePage = ({ posts }: { posts: any }) => {
+  console.log(posts);
+
   return (
     <>
       <Head>
