@@ -49,8 +49,6 @@
 
   pointer-events: none;
   user-select: none;
-
-  clip-path: polygon(0 0, 100% 0, 100% 100%, 70% 100%, 70% 80%, 30% 80%, 30% 100%, 0 100%);
 }
 
 .pagination {
@@ -96,12 +94,12 @@
 }
 
 .navigation {
+  @include fixedBg('../assets/images/bg.jpg');
+
   position: absolute;
   bottom: 0;
-  left: 50%;
+  left: calc((511px / 1920px) * 100%);
   z-index: 500;
-
-  translate: -50% 0;
 
   display: flex;
   align-items: center;
@@ -142,5 +140,29 @@
   }
 }
 
-.navigationNext {
+.label {
+  position: absolute;
+  top: 36px;
+  left: -248px;
+
+  translate: -100% 0;
+
+  font-size: 22px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: -27px;
+
+    translate: 100% -50%;
+
+    width: 286px;
+    height: 2px;
+
+    background-color: $golden;
+    border-radius: 4px;
+  }
 }

@@ -1,10 +1,21 @@
 import Head from 'next/head';
 
 import { Favicon } from '@/components/common';
-import { About, Hero, Services } from '@/scenes/Home';
+import {
+  About,
+  Hero,
+  Services,
+  ServiceGrabAndGo,
+  ServiceDelivery,
+  ServiceCatering,
+  Advantage,
+  Community,
+} from '@/scenes/Home';
 import { BgWrapper } from '@/components/misc';
 
 import FooterImg from '@/assets/images/home/footer_bg.jpg';
+import { Clients } from '@/scenes/Home/Clients';
+import { Footer } from '@/modules';
 
 // import { GetStaticProps, GetStaticPaths } from 'next';
 // import { getPosts } from '@/services/service';
@@ -27,8 +38,16 @@ const HomePage = ({ posts }: { posts: any }) => {
       <Hero />
       <About />
       <Services />
+      <ServiceGrabAndGo />
+      <ServiceDelivery />
+      <ServiceCatering />
+      <Advantage />
+      <Clients />
 
-      <BgWrapper imageUrl={FooterImg.src}>FOOTER</BgWrapper>
+      <BgWrapper imageUrl={FooterImg.src}>
+        <Community />
+        <Footer />
+      </BgWrapper>
     </>
   );
 };

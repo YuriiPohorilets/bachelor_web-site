@@ -1,0 +1,82 @@
+@import '@/styles/mixins', '@/styles/variables';
+
+.section {
+  @include fullHeight(1100px);
+}
+
+.contentWrapper {
+  @include fixedBg('../assets/images/bg.jpg');
+
+  position: absolute;
+  top: 0;
+  left: 169px;
+  z-index: 20;
+
+  display: flex;
+  flex-direction: column;
+  gap: 87px;
+
+  padding-top: 80px;
+  padding-bottom: 60px;
+  padding-inline: 97px;
+  width: min(100%, 778px);
+}
+
+.description {
+  letter-spacing: -0.01em;
+}
+
+.swiper {
+  @include fullHeight(1100px);
+}
+
+.img {
+  @include square(100%);
+  object-fit: cover;
+  object-position: center;
+
+  user-select: none;
+  pointer-events: none;
+}
+
+.pagination {
+  position: absolute;
+  bottom: 194px !important;
+  right: 248px !important;
+  left: auto !important;
+  top: auto !important;
+  z-index: 300;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 11px;
+
+  width: fit-content !important;
+}
+
+.sliderBullets {
+  @include square(20px);
+  display: block;
+
+  border: 1px solid $light-grey;
+  border-radius: 50%;
+
+  background-color: $main;
+
+  transition: background-color $duration-sm $easing-base, scale $duration-sm $easing-base;
+
+  cursor: pointer;
+
+  @include hover {
+    scale: 1.05;
+  }
+}
+
+.sliderBulletsActive {
+  background-color: $light-grey;
+
+  @include hover {
+    scale: 1;
+  }
+}

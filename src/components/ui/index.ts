@@ -5,3 +5,4 @@ export { Textarea } from './Textarea/Textarea';
 export { Checkbox } from './Checkbox/Checkbox';
 export { Paragraph } from './Paragraph/Paragraph';
 export { Quote } from './Quote/Quote';
+export { PageLink } from './PageLink/PageLink';

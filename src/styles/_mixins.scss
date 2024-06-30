@@ -9,6 +9,13 @@
   @return $return-value;
 }
 
+@mixin fixedBg($bgUrl) {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url($bgUrl);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
 @mixin fullHeight($maxHeight: 1080px) {
   min-height: $maxHeight;
   height: min(100lvh, $maxHeight);

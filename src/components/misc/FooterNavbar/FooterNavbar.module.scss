@@ -1,0 +1,22 @@
+@import '@/styles/mixins', '@/styles/variables';
+
+.list {
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  gap: 12px 32px;
+}
+
+.item {
+  flex: 1;
+  width: max-content;
+}
+
+.link {
+  line-height: 1;
+
+  transition: color $duration-sm $easing-base;
+
+  @include hover {
+    color: $golden;
+  }
+}

@@ -65,6 +65,8 @@ export const Services: React.FC = () => {
       >
         <ArrowNavigationIcon />
       </button>
+
+      <span className={styles.label}>Our proposals</span>
     </div>
   );
 
@@ -77,7 +79,7 @@ export const Services: React.FC = () => {
           <Swiper
             navigation={{ prevEl: '#prevElBtn', nextEl: '#nextElBtn' }}
             pagination={{
-              el: '#paginationContainer',
+              el: '#paginationContainer_services',
               type: 'bullets',
               bulletClass: styles.sliderBullets,
               bulletActiveClass: styles.sliderBulletsActive,
@@ -111,7 +113,7 @@ export const Services: React.FC = () => {
             ))}
           </Swiper>
 
-          <div id="paginationContainer" className={styles.pagination} />
+          <div id="paginationContainer_services" className={styles.pagination} />
 
           {renderSliderNavigation()}
         </div>

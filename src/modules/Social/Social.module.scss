@@ -1,0 +1,17 @@
+@import '@/styles/mixins', '@/styles/variables';
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.link {
+  line-height: 1;
+
+  transition: color $duration-sm $easing-base;
+
+  @include hover {
+    color: $golden;
+  }
+}

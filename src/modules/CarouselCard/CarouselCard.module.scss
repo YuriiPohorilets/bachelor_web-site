@@ -1,0 +1,7 @@
+@import '@/styles/mixins', '@/styles/variables';
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
