@@ -1,42 +1,26 @@
-@import '@/styles/variables', '@/styles/mixins';
+@import '@/styles/mixins', '@/styles/variables';
 
 .footer {
+  @include shadow('bottom', 574px);
   position: relative;
 
   padding-top: 140px;
   padding-bottom: 24px;
 
-  &::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    z-index: 0;
+  height: 670px;
+}
 
-    width: 100%;
-    height: 574px;
-
-    background: linear-gradient(
-      to top,
-      rgb(0, 0, 0, 1),
-      rgba(0, 0, 0, 0.64) 46%,
-      rgba(0, 0, 0, 0) 91%
-    );
-  }
+.container {
+  padding-inline: 48px;
 }
 
 .wrapper {
   position: relative;
-  z-index: 1;
+  z-index: 10;
 
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
-  align-items: center;
   gap: 38px;
-
-  min-height: 670px;
-  height: min(100%, 670px);
 }
 
 .innerWrapper {
@@ -44,15 +28,12 @@
   flex-direction: column;
   align-items: center;
   gap: 72px;
-
-  width: 100%;
 }
 
 .contentWrapper {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: 66px;
+  gap: 56px;
 }
 
 .logoWrapper {
@@ -63,27 +44,26 @@
 
 .iconWrapper {
   width: min(100%, 73px);
-
-  & > svg {
-    @include square(100%);
-  }
 }
 
-.logo {
-  margin-top: -10px;
+.title {
+  margin-top: -8px;
 
   display: flex;
   flex-direction: column;
   align-items: center;
 
-  font-family: $font-cormorantUnicase;
-  font-size: 67px;
-  letter-spacing: -0.01em;
-  font-weight: 500;
-  text-transform: uppercase;
   text-align: center;
+  text-transform: uppercase;
 
-  & > span {
+  & > span:nth-of-type(1) {
+    font-family: $font-cormorantUnicase;
+    font-size: 68px;
+    font-weight: 500;
+    letter-spacing: -0.01em;
+  }
+
+  & > span:nth-of-type(2) {
     font-family: $font-gotham-pro;
     font-size: 14px;
     font-weight: 400;
@@ -91,16 +71,17 @@
   }
 }
 
-.btnWrapper {
-  margin-top: 66px;
-  width: 100%;
+.link {
+  text-transform: uppercase;
+}
+
+.navWrapper {
+  width: min(100%, 1053px);
 }
 
 .navList {
   display: flex;
   justify-content: space-between;
-
-  width: min(100%, 1050px);
 }
 
 .navItem {
@@ -110,7 +91,16 @@
 }
 
 .navLabel {
-  font-size: 20px;
   color: $default-text;
+  font-size: 20px;
+  line-height: 1;
   text-transform: uppercase;
+}
+
+.copyrightWrapper {
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }

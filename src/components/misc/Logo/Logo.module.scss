@@ -1,14 +1,12 @@
 @import '@/styles/variables', '@/styles/mixins';
 
-.link {
+.wrapper {
+  @include square(100%);
   display: flex;
   align-items: center;
   justify-content: center;
-
-  width: min(100%, 48px);
-  height: 100%;
 }
 
-.link > svg {
+.wrapper > svg {
   @include square(100%);
 }

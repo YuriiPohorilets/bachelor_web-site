@@ -1,6 +1,5 @@
 export { Logo } from './Logo/Logo';
-export { FooterNavbar } from './FooterNavbar/FooterNavbar';
 export { Copyright } from './Copyright/Copyright';
-export { ContactUsButton } from './ContactUsButton/ContactUsButton';
-export { PageLink } from './PageLink/PageLink';
-export { BackgroundWrapper } from './BackgroundWrapper/BackgroundWrapper';
+export { BgWrapper } from './BgWrapper/BgWrapper';
+export { ToTopButton } from './ToTopButton/ToTopButton';
+export { FooterNavbar } from './FooterNavbar/FooterNavbar';

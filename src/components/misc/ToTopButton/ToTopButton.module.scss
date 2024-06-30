@@ -1,0 +1,19 @@
+@import '@/styles/mixins', '@/styles/variables';
+
+.btn {
+  color: $white;
+  font-size: 18px;
+  line-height: 1;
+  text-transform: uppercase;
+
+  border: none;
+  background-color: transparent;
+
+  transition: color $duration-sm $easing-base;
+
+  cursor: pointer;
+
+  @include hover {
+    color: $golden;
+  }
+}

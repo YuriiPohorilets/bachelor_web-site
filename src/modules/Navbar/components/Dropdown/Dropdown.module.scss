@@ -1,1 +1,50 @@
 @import '@/styles/variables', '@/styles/mixins';
+
+.btn {
+  padding-inline: 0;
+
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  border: none;
+  background-color: transparent;
+
+  cursor: pointer;
+}
+
+.btn[aria-expanded='true'] {
+  color: $golden;
+}
+
+.icon {
+  @include square(8px);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  transition: rotate $duration-sm $easing-base;
+
+  & > svg {
+    @include square(100%);
+  }
+}
+
+.btn[aria-expanded='true'] .icon {
+  rotate: 0deg;
+}
+
+.btn[aria-expanded='false'] .icon {
+  rotate: 180deg;
+}
+
+.wrapper {
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+
+  translate: 0 100%;
+
+  width: max-content;
+}

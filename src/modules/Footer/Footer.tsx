@@ -1,52 +1,54 @@
-import { Address, Social } from '@/modules';
 import { Container } from '@/components/common';
-import { ContactUsButton, Copyright, FooterNavbar } from '@/components/misc';
-import { CrownIcon } from '@/assets/icons';
+import { Copyright, FooterNavbar, Logo, ToTopButton } from '@/components/misc';
+import { PageLink } from '@/components/ui';
+import { Address, Social } from '@/modules';
+import { PagePathname } from '@/types';
 
 import styles from './Footer.module.scss';
 
-const content = {
-  title: ['Bachelor bunny', 'gourmet'],
-};
-
 export const Footer: React.FC = () => {
-  const navItems = [
-    { id: 'footer-item-0', label: 'Navigation', component: <FooterNavbar /> },
-    { id: 'footer-item-1', label: 'Business enquiries', component: <Address /> },
-    { id: 'footer-item-2', label: 'Follow us', component: <Social /> },
+  const footerNavList = [
+    { label: 'Navigation', component: <FooterNavbar /> },
+    { label: 'Business enquiries', component: <Address /> },
+    { label: 'Follow us', component: <Social /> },
   ];
 
   return (
     <footer className={styles.footer}>
-      <Container>
+      <Container className={styles.container}>
         <div className={styles.wrapper}>
           <div className={styles.innerWrapper}>
             <div className={styles.contentWrapper}>
               <div className={styles.logoWrapper}>
                 <div className={styles.iconWrapper}>
-                  <CrownIcon />
+                  <Logo />
                 </div>
 
-                <span className={styles.logo}>
-                  {content.title[0]} <span>{content.title[1]}</span>
+                <span className={styles.title}>
+                  <span>Bachelor Bunny</span>
+                  <span>Gourmet</span>
                 </span>
               </div>
 
-              <ContactUsButton variant="outlined" />
+              <PageLink page={PagePathname.ContactUs} className={styles.link} />
             </div>
 
-            <ul className={styles.navList}>
-              {navItems.map(({ id, label, component }) => (
-                <li key={id} className={styles.navItem}>
-                  <span className={styles.navLabel}>{label}</span>
-
-                  {component}
-                </li>
-              ))}
-            </ul>
+            <div className={styles.navWrapper}>
+              <ul className={styles.navList}>
+                {footerNavList.map((item, index) => (
+                  <li key={index} className={styles.navItem}>
+                    <span className={styles.navLabel}>{item.label}</span>
+                    {item.component}
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
 
-          <Copyright />
+          <div className={styles.copyrightWrapper}>
+            <Copyright />
+            <ToTopButton />
+          </div>
         </div>
       </Container>
     </footer>

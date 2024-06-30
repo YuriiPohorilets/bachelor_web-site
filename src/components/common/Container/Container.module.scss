@@ -2,6 +2,6 @@
 
 .container {
   margin-inline: auto;
-  padding-inline: $container-padding;
-  width: min(100%, 2560px);
+
+  width: min(100%, $screen-xxl-min);
 }

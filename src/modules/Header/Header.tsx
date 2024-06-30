@@ -1,26 +1,18 @@
 import { Container } from '@/components/common';
-import { Logo } from '@/components/misc';
-import { Navbar } from '@/modules';
-import { headerNavList } from '@/constants/navigation';
+import { Navbar } from '@/modules/Navbar/Navbar';
 
 import styles from './Header.module.scss';
+import { Logo } from '@/components/misc';
 
 export const Header: React.FC = () => {
   return (
     <header className={styles.header}>
-      <Container>
-        <div className={styles.wrapper}>
-          <Logo />
-
-          <Navbar>
-            <Navbar.List>
-              {headerNavList.map(item => {
-                if (item.dropdown) return;
-
-                return <Navbar.Item key={item.id} item={item} className={styles.navItem} />;
-              })}
-            </Navbar.List>
-          </Navbar>
+      <Container className={styles.container}>
+        <div className={styles.wrapoer}>
+          <div className={styles.iconWrapper}>
+            <Logo />
+          </div>
+          <Navbar />
         </div>
       </Container>
     </header>

@@ -1,5 +1,7 @@
+import { Mails, Phones } from '@/types';
+
 export const addressList = [
-  { id: 'address-01', label: 'Food@BachelorBunny.com', link: 'mailto:food@bachelorbunny.com' },
-  { id: 'address-02', label: '(866) 698-2607', link: 'tel:8666982607' },
-  { id: 'address-03', label: '(312) 722-2526', link: 'tel:3127222526' },
+  { id: 'address-01', label: 'Food@BachelorBunny.com', link: `mailto:${Mails.Primary}` },
+  { id: 'address-02', label: '(866) 698-2607', link: `tel:${Phones.Primary}` },
+  { id: 'address-03', label: '312.722.2526', link: `fax:${Phones.Secondary}` },
 ];

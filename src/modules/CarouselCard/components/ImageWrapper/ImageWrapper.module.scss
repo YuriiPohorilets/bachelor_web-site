@@ -1,0 +1,10 @@
+@import '@/styles/mixins';
+
+.img {
+  @include square(100%);
+  object-fit: cover;
+  object-position: center;
+
+  user-select: none;
+  pointer-events: none;
+}

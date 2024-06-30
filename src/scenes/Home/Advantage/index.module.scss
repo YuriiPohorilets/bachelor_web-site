@@ -1,0 +1,17 @@
+@import '@/styles/mixins';
+
+.container {
+  padding-inline: 48px;
+}
+
+.wrapper {
+  @include fullHeight(1000px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.description {
+  width: min(100%, 1227px);
+  text-transform: uppercase;
+}

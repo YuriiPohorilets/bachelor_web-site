@@ -1,0 +1,54 @@
+@import '@/styles/variables', '@/styles/mixins';
+
+.link {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 8px;
+
+  color: $white;
+  font-family: $font-cormorantUnicase;
+
+  border-bottom: 1px solid currentColor;
+
+  transition: color $duration-sm $easing-base;
+
+  @include hover {
+    color: $golden;
+  }
+}
+
+.badge {
+  color: currentColor;
+  font-size: 20px;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+  padding-bottom: 2px;
+}
+
+.labelWrapper {
+  display: flex;
+  align-items: flex-end;
+  gap: 2px;
+}
+
+.link:not(:has(.badge)) .labelWrapper {
+  width: 100%;
+  justify-content: space-between;
+}
+
+.label {
+  color: currentColor;
+  font-size: 38px;
+  line-height: 1;
+}
+
+.icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  & > svg {
+    @include square(100%);
+  }
+}

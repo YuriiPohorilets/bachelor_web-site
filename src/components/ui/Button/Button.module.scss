@@ -1,37 +1,33 @@
-@import '@/styles/variables', '@/styles/mixins';
+@import '@/styles/mixins', '@/styles/variables';
 
 .btn {
   display: flex;
   align-items: center;
   justify-content: center;
 
-  padding-top: 14px;
-  padding-bottom: 13px;
+  padding-top: 16px;
+  padding-bottom: 15px;
+  padding-inline: 16px;
+
   width: 100%;
 
+  color: $dark-bg;
+  text-align: center;
   font-size: 20px;
   letter-spacing: 0.15em;
+  text-transform: uppercase;
 
-  border: none;
+  background-color: $white;
 
   transition: color $duration-sm $easing-base;
-
-  cursor: pointer;
-}
-
-.light {
-  color: $dark-bg;
-  background-color: $white;
 
   @include hover {
     color: $golden;
   }
 }
 
-.accent {
-  color: $white;
-  background-color: $golden;
+button.btn {
+  border: none;
 
-  @include hover {
-  }
+  cursor: pointer;
 }

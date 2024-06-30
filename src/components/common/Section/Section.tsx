@@ -1,4 +1,5 @@
 import classNames from 'classnames';
+
 import styles from './Section.module.scss';
 
 interface IProps extends React.PropsWithChildren {

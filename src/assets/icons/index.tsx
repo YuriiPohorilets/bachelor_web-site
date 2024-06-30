@@ -91,3 +91,14 @@ export const StarIcon: React.FC<IStarProps> = ({ offset }) => {
     </svg>
   );
 };
+
+export const DropdownIcon = () => (
+  <svg xmlns="http://www.w3.org/2000/svg" width="8" height="9" viewBox="0 0 8 9" fill="none">
+    <mask id="mask0_1548_7992" maskUnits="userSpaceOnUse" x="-4" y="-3" width="16" height="17">
+      <rect x="-4" y="-2.5" width="16" height="16" fill="#D9D9D9" />
+    </mask>
+    <g mask="url(#mask0_1548_7992)">
+      <path d="M4 2.5L0 6.5H8L4 2.5Z" fill="currentColor" />
+    </g>
+  </svg>
+);

@@ -1,1 +1,36 @@
 @import '@/styles/variables', '@/styles/mixins';
+
+.item {
+  position: relative;
+
+  display: flex;
+}
+
+.item:nth-of-type(1) {
+  order: 0;
+}
+.item:nth-of-type(2) {
+  order: 2;
+}
+.item:nth-of-type(3) {
+  order: 1;
+}
+.item:nth-of-type(4) {
+  order: 3;
+}
+
+.list {
+  display: flex;
+  align-items: center;
+  gap: 146px;
+}
+
+.sublist {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.sublink {
+  text-transform: none;
+}

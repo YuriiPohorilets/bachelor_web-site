@@ -1,35 +1,8 @@
-@import '@/styles/variables', '@/styles/mixins';
+@import '@/styles/variables';
 
-.copyWrapper {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-
-  width: 100%;
-}
-
-.copyright,
-.btn {
+.copyright {
   color: $white;
   font-size: 16px;
-  font-weight: 300;
   line-height: 1;
   text-transform: uppercase;
-}
-
-.btn {
-  padding-block: 0;
-  padding-inline: 0;
-
-  font-size: 18px;
-
-  border: none;
-  background-color: transparent;
-  transition: color $duration-sm $easing-base;
-
-  cursor: pointer;
-
-  @include hover {
-    color: $golden;
-  }
 }

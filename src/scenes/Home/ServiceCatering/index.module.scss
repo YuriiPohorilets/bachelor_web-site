@@ -1,0 +1,37 @@
+@import '@/styles/mixins', '@/styles/variables';
+
+.section {
+  background-image: url('../../../assets/images/home/catering_bg.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.container {
+  padding-inline: 46px;
+}
+
+.wrapper {
+  @include fullHeight(1100px);
+
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+}
+
+.contentWrapper {
+  @include fixedBg('../assets/images/bg.jpg');
+
+  padding-block: 67px;
+  padding-right: 179px;
+  padding-left: 104px;
+  width: min(100%, 778px);
+
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.description {
+  letter-spacing: -0.03em;
+}

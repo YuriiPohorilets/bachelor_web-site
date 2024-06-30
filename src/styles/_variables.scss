@@ -13,15 +13,12 @@ $font-century-gothic: 'Century Gothic', sans-serif;
 $font-gotham-pro: 'GothamPro', sans-serif;
 $font-cormorantUnicase: 'Cormorant Unicase', serif;
 
-$duration-xs: 100ms;
 $duration-sm: 250ms;
 $duration-md: 600ms;
-$easing-linear: linear;
 $easing-base: ease-in-out;
 
+$screen-sm-min: 320px;
 $screen-md-min: 768px;
 $screen-lg-min: 1280px;
 $screen-xl-min: 1440px;
 $screen-xxl-min: 1920px;
-
-$container-padding: 48px;

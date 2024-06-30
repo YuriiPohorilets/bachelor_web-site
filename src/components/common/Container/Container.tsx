@@ -1,7 +1,11 @@
+import classNames from 'classnames';
+
 import styles from './Container.module.scss';
 
-interface IProps extends React.PropsWithChildren {}
+interface IProps extends React.PropsWithChildren {
+  className?: string;
+}
 
-export const Container: React.FC<IProps> = ({ children }) => {
-  return <div className={styles.container}>{children}</div>;
+export const Container: React.FC<IProps> = ({ children, className }) => {
+  return <div className={classNames(styles.container, className)}>{children}</div>;
 };

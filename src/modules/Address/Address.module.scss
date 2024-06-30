@@ -1,4 +1,4 @@
-@import '@/styles/variables', '@/styles/mixins';
+@import '@/styles/mixins', '@/styles/variables';
 
 .list {
   display: flex;
@@ -7,14 +7,15 @@
 }
 
 .link {
-  font-weight: 300;
-  line-height: 1;
   color: $white;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1;
 
   transition: color $duration-sm $easing-base;
 
-  &:hover,
-  &:focus-visible {
+  @include hover {
     color: $golden;
   }
 }
