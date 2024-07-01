@@ -1,0 +1,12 @@
+@import '@/styles/variables';
+
+.wrapper {
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+
+  border-bottom: 1px solid $default-text;
+
+  overflow: hidden;
+}

@@ -1,3 +1,4 @@
+import { Links } from '@/types';
 import { Container, Section } from '@/components/common';
 import { Button, Paragraph } from '@/components/ui';
 
@@ -18,7 +19,7 @@ export const Community: React.FC = () => {
 
           <div className={styles.contentWrapper}>
             <Paragraph className={styles.description}>{content.description}</Paragraph>
-            <Button as="a" href="">
+            <Button as="a" target="_blank" href={Links.Youtube}>
               Join the club
             </Button>
           </div>

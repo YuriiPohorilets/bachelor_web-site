@@ -1,6 +1,12 @@
 import Head from 'next/head';
 
 import { Favicon } from '@/components/common';
+import { About, Advantage, Faq, Hero, OurTeam } from '@/scenes/Delivery';
+import { BgWrapper } from '@/components/misc';
+
+import HeroBgImg from '@/assets/images/delivery/hero_bg.jpg';
+import FooterBgImg from '@/assets/images/delivery/footer_bg.png';
+import { Footer } from '@/modules';
 
 const headContent = {
   title: 'In-Home Executive Delivery - Bachelor Bunny Gourmet',
@@ -17,6 +23,17 @@ const DeliveryPage = () => {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <Favicon />
       </Head>
+
+      <BgWrapper imageUrl={HeroBgImg.src}>
+        <Hero />
+        <Advantage />
+      </BgWrapper>
+      <About />
+      <BgWrapper imageUrl={FooterBgImg.src}>
+        <OurTeam />
+        <Faq />
+        <Footer />
+      </BgWrapper>
     </>
   );
 };

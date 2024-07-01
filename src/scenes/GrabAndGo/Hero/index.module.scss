@@ -1,0 +1,98 @@
+@import '@/styles/mixins', '@/styles/variables';
+
+.section {
+  @include shadow(top, 560px);
+  @include fullHeight(1100px);
+}
+
+.wrapper {
+  @include square(100%);
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10;
+
+  padding-inline: 48px;
+  padding-top: 339px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.title {
+  text-align: center;
+  font-family: $font-cormorantUnicase;
+  font-size: 150px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.contentWrapper {
+  @include fixedBg('../assets/images/bg.jpg');
+  position: relative;
+
+  padding-right: 137px;
+  padding-left: 115px;
+  padding-bottom: 100px;
+  padding-top: 60px;
+  width: min(100%, 778px);
+
+  align-self: flex-end;
+  display: flex;
+  flex-direction: column;
+  gap: 44px;
+}
+
+.description {
+  line-height: 1.277;
+  letter-spacing: -0.03em;
+}
+
+.swiper {
+  @include fullHeight(1100px);
+  z-index: 0;
+}
+
+.pagination {
+  position: absolute;
+  bottom: 194px !important;
+  left: 60px !important;
+  top: auto !important;
+  z-index: 300;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 11px;
+
+  width: fit-content !important;
+}
+
+.sliderBullets {
+  @include square(20px);
+  display: block;
+
+  border: 1px solid $light-grey;
+  border-radius: 50%;
+
+  background-color: $main;
+
+  transition: background-color $duration-sm $easing-base, scale $duration-sm $easing-base;
+
+  cursor: pointer;
+
+  @include hover {
+    scale: 1.05;
+  }
+}
+
+.sliderBulletsActive {
+  background-color: $light-grey;
+
+  @include hover {
+    scale: 1;
+  }
+}

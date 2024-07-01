@@ -1,0 +1,115 @@
+@import '@/styles/mixins', '@/styles/variables';
+
+.section {
+  @include fullHeight(1080px);
+
+  padding-top: 378px;
+  padding-bottom: 89px;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 37px;
+}
+
+.title {
+  color: $golden;
+  text-align: center;
+  font-size: 44px;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+}
+
+.descriptionWrapper {
+  position: absolute;
+  top: 161px;
+  left: 52px;
+  z-index: 20;
+
+  width: min(100%, 515px);
+}
+
+.description {
+  line-height: 1.2778;
+  letter-spacing: -0.01em;
+}
+
+.logoWrapper {
+  position: absolute;
+  bottom: 160px;
+  left: 85px;
+  z-index: 10;
+
+  width: min(100%, 604px);
+  opacity: 0.04;
+}
+
+.swiper {
+  padding-left: 515px;
+  padding-right: 48px;
+  margin-bottom: 32px;
+}
+
+.slide {
+  width: min(100%, 434px);
+}
+
+.contentWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.labelWrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.navigation {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+
+  width: 76%;
+  padding-inline: 20px;
+}
+
+.navigationPrev,
+.navigationNext {
+  @include square(60px);
+  min-width: 60px;
+
+  padding-block: 10px;
+  padding-inline: 15px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: $golden;
+
+  border: none;
+  background-color: transparent;
+
+  cursor: pointer;
+
+  transition: color $duration-sm $easing-base;
+
+  @include hover {
+    color: $white;
+  }
+
+  & > svg {
+    @include square(100%);
+  }
+}
+
+.navigationPrev {
+  & > svg {
+    rotate: 180deg;
+  }
+}

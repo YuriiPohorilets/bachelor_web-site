@@ -9,10 +9,10 @@ import { PagePathname } from '@/types';
 import SlideImg1 from '@/assets/images/home/delivery_slide-1.jpg';
 import SlideImg2 from '@/assets/images/home/delivery_slide-2.jpg';
 
-import styles from './index.module.scss';
 import 'swiper/css';
 import 'swiper/css/effect-fade';
 import 'swiper/css/pagination';
+import styles from './index.module.scss';
 
 const content = {
   title: 'In-Home Executive Delivery',
@@ -27,6 +27,7 @@ const content = {
 export const ServiceDelivery: React.FC = () => {
   const renderSwiper = () => (
     <Swiper
+      id="home_delivery-swiper"
       pagination={{
         el: '#paginationContainer_delivery',
         type: 'bullets',

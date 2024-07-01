@@ -4,12 +4,12 @@ import { Navigation, FreeMode } from 'swiper/modules';
 import { Container, Section } from '@/components/common';
 import { CarouselCard } from '@/modules';
 
+import { ArrowNavigationIcon } from '@/assets/icons';
 import ClientImg from '@/assets/images/home/client_placeholder.jpg';
 
 import styles from './index.module.scss';
 import 'swiper/css';
 import 'swiper/css/free-mode';
-import { ArrowNavigationIcon } from '@/assets/icons';
 
 const content = {
   title: 'Our clients',
@@ -51,7 +51,7 @@ export const Clients: React.FC = () => {
   const renderSliderNavigation = () => (
     <div className={styles.navigation}>
       <button
-        id="prevElBtn"
+        id="home_clients_prevElBtn"
         aria-label="previous slide"
         type="button"
         className={styles.navigationPrev}
@@ -60,7 +60,7 @@ export const Clients: React.FC = () => {
       </button>
 
       <button
-        id="nextElBtn"
+        id="home_clients_nextElBtn"
         aria-label="next slide"
         type="button"
         className={styles.navigationNext}
@@ -77,7 +77,8 @@ export const Clients: React.FC = () => {
           <h2 className={styles.title}>{content.title}</h2>
 
           <Swiper
-            navigation={{ prevEl: '#prevElBtn', nextEl: '#nextElBtn' }}
+            id="home_clients-swiper"
+            navigation={{ prevEl: '#home_clients_prevElBtn', nextEl: '#home_clients_nextElBtn' }}
             grabCursor
             slidesPerView={'auto'}
             spaceBetween={30}
@@ -94,7 +95,7 @@ export const Clients: React.FC = () => {
 
                   <div className={styles.contentWrapper}>
                     <div className={styles.labelWrapper}>
-                      <CarouselCard.Label label={item.label} />
+                      <CarouselCard.Label label={item.label} className={styles.cardLabel} />
                       <CarouselCard.Rating rating={item.rating} />
                     </div>
 

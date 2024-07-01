@@ -10,10 +10,10 @@ import SlideImg1 from '@/assets/images/home/services_slide-1.jpg';
 import SlideImg2 from '@/assets/images/home/services_slide-2.jpg';
 import SlideImg3 from '@/assets/images/home/services_slide-3.jpg';
 
-import styles from './index.module.scss';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
+import styles from './index.module.scss';
 
 const content = {
   title: 'Our services',
@@ -47,7 +47,7 @@ export const Services: React.FC = () => {
   const renderSliderNavigation = () => (
     <div className={styles.navigation}>
       <button
-        id="prevElBtn"
+        id="home_services_prevElBtn"
         aria-label="previous slide"
         type="button"
         className={styles.navigationPrev}
@@ -58,7 +58,7 @@ export const Services: React.FC = () => {
       <p className={styles.slideDescription}>{content.slides[currentSlideId].description}</p>
 
       <button
-        id="nextElBtn"
+        id="home_services_nextElBtn"
         aria-label="next slide"
         type="button"
         className={styles.navigationNext}
@@ -77,7 +77,8 @@ export const Services: React.FC = () => {
           <h2 className="hidden">{content.title}</h2>
 
           <Swiper
-            navigation={{ prevEl: '#prevElBtn', nextEl: '#nextElBtn' }}
+            id="home_services-swiper"
+            navigation={{ prevEl: '#home_services_prevElBtn', nextEl: '#home_services_nextElBtn' }}
             pagination={{
               el: '#paginationContainer_services',
               type: 'bullets',

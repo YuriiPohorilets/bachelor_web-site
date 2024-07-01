@@ -55,13 +55,17 @@
   justify-content: space-between;
 }
 
+.cardLabel {
+  font-weight: 700;
+}
+
 .navigation {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 32px;
 
-  width: 75%;
+  width: 76%;
   padding-inline: 20px;
 }
 
