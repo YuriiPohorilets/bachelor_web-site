@@ -1,0 +1,11 @@
+.list {
+  display: flex;
+  flex-direction: column;
+}
+
+.description {
+  margin-left: auto;
+  width: min(100%, 624px);
+
+  line-height: 1.2;
+}

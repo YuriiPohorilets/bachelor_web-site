@@ -1,7 +1,11 @@
 import Head from 'next/head';
 
 import { Favicon } from '@/components/common';
-import { Hero } from '@/scenes/AboutUs';
+import { About, Community, Hero, Menu, OurTeam, Story } from '@/scenes/AboutUs';
+import { Footer } from '@/modules';
+import { BgWrapper } from '@/components/misc';
+
+import FooterBg from '@/assets/images/about/footer_bg.jpg';
 
 const headContent = {
   title: 'About us - Bachelor Bunny Gourmet',
@@ -19,6 +23,14 @@ const AboutUsPage = () => {
       </Head>
 
       <Hero />
+      <About />
+      <Story />
+      <OurTeam />
+      <BgWrapper imageUrl={FooterBg.src}>
+        <Menu />
+        <Community />
+        <Footer />
+      </BgWrapper>
     </>
   );
 };

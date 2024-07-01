@@ -8,9 +8,9 @@ import { Logo } from '@/components/misc';
 import SlideImg1 from '@/assets/images/home/hero_slide-1.jpg';
 import SlideImg2 from '@/assets/images/home/hero_slide-2.jpg';
 
-import styles from './index.module.scss';
 import 'swiper/css';
 import 'swiper/css/effect-fade';
+import styles from './index.module.scss';
 
 const content = {
   title: ['Bachelor Bunny', 'Gourmet'],
@@ -31,6 +31,7 @@ const content = {
 export const Hero: React.FC = () => {
   const renderSwiper = () => (
     <Swiper
+      id="home_hero-swiper"
       effect={'fade'}
       speed={2000}
       noSwiping={true}

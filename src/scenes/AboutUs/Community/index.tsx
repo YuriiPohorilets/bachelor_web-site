@@ -5,9 +5,9 @@ import { Button, Paragraph } from '@/components/ui';
 import styles from './index.module.scss';
 
 const content = {
-  title: 'Become A Member Of The Bachelor Club',
+  title: 'YouTube Channel',
   description:
-    "Join 'The Bachelor's Club' for an exclusive dining experience where meals are delivered, unpacked, plated, and served by our team, elevating your dining experience and making you part of an elite group. \nIndulge in the Art of Mastery, where success is crafted and leisure is defined in the exclusive realm of the Modern Gentleman.",
+    'Subscribe to our channel to watch Chef Sophi create delicious dishes! Don’t miss out on her amazing cooking tips, recipes, and culinary adventures. \nJoin us and become a part of our foodie community today!',
 };
 
 export const Community: React.FC = () => {
@@ -18,9 +18,9 @@ export const Community: React.FC = () => {
           <h2 className={styles.title}>{content.title}</h2>
 
           <div className={styles.contentWrapper}>
-            <Paragraph className={styles.description}>{content.description}</Paragraph>
+            <Paragraph>{content.description}</Paragraph>
             <Button as="a" target="_blank" href={Links.Youtube}>
-              Join the club
+              Subscribe
             </Button>
           </div>
         </div>

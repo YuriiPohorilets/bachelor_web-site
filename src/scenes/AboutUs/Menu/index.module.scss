@@ -1,7 +1,7 @@
 @import '@/styles/mixins', '@/styles/variables';
 
 .wrapper {
-  padding-bottom: 240px;
+  padding-top: 214px;
 
   display: flex;
   flex-direction: column;
@@ -11,8 +11,8 @@
 
 .title {
   position: absolute;
-  top: 50px;
-  left: 48px;
+  top: 296px;
+  left: 146px;
   z-index: 20;
 
   font-size: 38px;

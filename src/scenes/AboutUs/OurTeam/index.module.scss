@@ -1,0 +1,46 @@
+@import '@/styles/variables', '@/styles/mixins';
+
+.section {
+  @include fullHeight(1080px);
+  padding-top: 178px;
+
+  background-image: url('../../../assets/images/about/team_bg.jpg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.container {
+  padding-inline: 48px;
+}
+
+.wrapper {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.title {
+  position: relative;
+
+  text-align: center;
+  font-size: 38px;
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+
+    translate: -50% 0;
+
+    width: 56%;
+    height: 2px;
+
+    border-radius: 4px;
+    background-color: $golden;
+  }
+}

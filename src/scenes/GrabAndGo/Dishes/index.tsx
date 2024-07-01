@@ -3,55 +3,35 @@ import { Navigation, FreeMode } from 'swiper/modules';
 
 import { Container, Section } from '@/components/common';
 import { CarouselCard } from '@/modules';
-
 import { ArrowNavigationIcon } from '@/assets/icons';
-import ClientImg from '@/assets/images/home/client_placeholder.jpg';
+import DishImg from '@/assets/images/grab-and-go/dish_placeholder.jpg';
 
-import styles from './index.module.scss';
 import 'swiper/css';
 import 'swiper/css/free-mode';
+import styles from './index.module.scss';
 
 const content = {
-  title: 'Our clients',
+  title: 'Signature dishes',
   slides: [
-    {
-      img: ClientImg,
-      label: 'Jason',
-      rating: 4.5,
-      description: 'Graduation Party - a true feast of taste !!!!',
-    },
-    {
-      img: ClientImg,
-      label: 'Tyler',
-      rating: 4,
-      description: 'Los Angeles Themed Party - gourmet treats and impeccable staff:) ',
-    },
-    {
-      img: ClientImg,
-      label: 'Michael',
-      rating: 5,
-      description: 'Los Angeles Birthday Bash - exquisite food and fantastic ambiance!',
-    },
-    {
-      img: ClientImg,
-      label: 'Brandon',
-      rating: 4,
-      description: 'Los Angeles Party - unforgettable menu and top-notch service!',
-    },
-    {
-      img: ClientImg,
-      label: 'Brian',
-      rating: 4.2,
-      description: 'Chicago Bachelor Bash - Delicious dishes and incredible beauties Bells!',
-    },
+    { img: DishImg, label: 'Title 1' },
+    { img: DishImg, label: 'Title 2' },
+    { img: DishImg, label: 'Title 3' },
+    { img: DishImg, label: 'Title 4' },
+    { img: DishImg, label: 'Title 5' },
+    { img: DishImg, label: 'Title 6' },
+    { img: DishImg, label: 'Title 7' },
+    { img: DishImg, label: 'Title 8' },
+    { img: DishImg, label: 'Title 9' },
+    { img: DishImg, label: 'Title 10' },
   ],
+  label: '-20% off week order',
 };
 
-export const Clients: React.FC = () => {
+export const Dishes: React.FC = () => {
   const renderSliderNavigation = () => (
     <div className={styles.navigation}>
       <button
-        id="home_clients_prevElBtn"
+        id="grab-and-go_dishes_prevElBtn"
         aria-label="previous slide"
         type="button"
         className={styles.navigationPrev}
@@ -59,8 +39,10 @@ export const Clients: React.FC = () => {
         <ArrowNavigationIcon />
       </button>
 
+      <span className={styles.label}>{content.label}</span>
+
       <button
-        id="home_clients_nextElBtn"
+        id="grab-and-go_dishes_nextElBtn"
         aria-label="next slide"
         type="button"
         className={styles.navigationNext}
@@ -71,16 +53,19 @@ export const Clients: React.FC = () => {
   );
 
   return (
-    <Section>
+    <Section className={styles.section}>
       <Container>
         <div className={styles.wrapper}>
           <h2 className={styles.title}>{content.title}</h2>
 
           <Swiper
-            id="home_clients-swiper"
-            navigation={{ prevEl: '#home_clients_prevElBtn', nextEl: '#home_clients_nextElBtn' }}
+            id="grab-and-go_dishes-swiper"
+            navigation={{
+              prevEl: '#grab-and-go_dishes_prevElBtn',
+              nextEl: '#grab-and-go_dishes_nextElBtn',
+            }}
             grabCursor
-            slidesPerView={'auto'}
+            slidesPerView="auto"
             spaceBetween={30}
             freeMode={false}
             speed={800}
@@ -91,15 +76,12 @@ export const Clients: React.FC = () => {
             {content.slides.map((item, index) => (
               <SwiperSlide key={index} className={styles.slide}>
                 <CarouselCard>
-                  <CarouselCard.ImageWrapper src={item.img} alt={item.description} />
+                  <CarouselCard.ImageWrapper src={item.img} alt={item.label} />
 
                   <div className={styles.contentWrapper}>
                     <div className={styles.labelWrapper}>
                       <CarouselCard.Label label={item.label} />
-                      <CarouselCard.Rating rating={item.rating} />
                     </div>
-
-                    <CarouselCard.Description description={item.description} />
                   </div>
                 </CarouselCard>
               </SwiperSlide>

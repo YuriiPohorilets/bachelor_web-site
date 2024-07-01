@@ -1,0 +1,70 @@
+@import '@/styles/mixins', '@/styles/variables';
+
+.container {
+  padding-right: 50px;
+}
+
+.wrapper {
+  @include fullHeight(1080px);
+
+  padding-bottom: 154px;
+}
+
+.title {
+  position: absolute;
+  bottom: 177px;
+  right: 50px;
+
+  font-family: $font-cormorantUnicase;
+  font-size: 24px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.mediaWrapper {
+  position: relative;
+
+  width: min(100%, 1311px);
+  height: 926px;
+}
+
+.img {
+  @include square(100%);
+  object-fit: cover;
+  object-position: center;
+
+  user-select: none;
+  pointer-events: none;
+}
+
+.imgLabel {
+  position: absolute;
+  bottom: 30px;
+  left: 47px;
+
+  font-family: $font-century-gothic;
+  letter-spacing: -0.01em;
+}
+
+.contentWrapper {
+  @include fixedBg('../assets/images/bg.jpg');
+
+  position: absolute;
+  top: 200px;
+  right: 50px;
+  z-index: 30;
+
+  display: flex;
+  gap: 32px;
+
+  padding-block: 67px;
+  padding-left: 54px;
+  padding-right: 28px;
+  width: min(100%, calc(926px + 54px));
+}
+
+.description {
+  flex: 1;
+  line-height: 1.27778;
+  letter-spacing: normal;
+}
