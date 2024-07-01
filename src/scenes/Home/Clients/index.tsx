@@ -95,7 +95,7 @@ export const Clients: React.FC = () => {
 
                   <div className={styles.contentWrapper}>
                     <div className={styles.labelWrapper}>
-                      <CarouselCard.Label label={item.label} />
+                      <CarouselCard.Label label={item.label} className={styles.cardLabel} />
                       <CarouselCard.Rating rating={item.rating} />
                     </div>
 

@@ -1,0 +1,59 @@
+@import '@/styles/mixins', '@/styles/variables';
+
+.section {
+  @include shadow(top);
+}
+
+.container {
+  padding-inline: 48px;
+}
+
+.wrapper {
+  @include fullHeight(1080px);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  padding-top: 290px;
+  padding-bottom: 100px;
+}
+
+.titleWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 60px;
+}
+
+.title {
+  text-align: center;
+  font-family: $font-cormorantUnicase;
+  font-size: 150px;
+  font-weight: 700;
+  line-height: 0.8;
+  letter-spacing: -0.01em;
+  white-space: pre-line;
+}
+
+.label {
+  text-align: center;
+  font-size: 22px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.contentWrapper {
+  align-self: flex-end;
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+
+  margin-right: 133px;
+  width: min(100%, 528px);
+}
+
+.description {
+  line-height: 1.278;
+  letter-spacing: -0.01em;
+}

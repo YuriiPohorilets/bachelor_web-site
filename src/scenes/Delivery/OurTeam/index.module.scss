@@ -1,43 +1,56 @@
 @import '@/styles/mixins', '@/styles/variables';
 
-.wrapper {
-  padding-bottom: 240px;
+.section {
+  @include fullHeight(1080px);
 
+  padding-top: 378px;
+  padding-bottom: 89px;
+}
+
+.wrapper {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-  gap: 48px;
+  gap: 37px;
 }
 
 .title {
+  color: $golden;
+  text-align: center;
+  font-size: 44px;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+}
+
+.descriptionWrapper {
   position: absolute;
-  top: 50px;
-  left: 48px;
+  top: 161px;
+  left: 52px;
   z-index: 20;
 
-  font-size: 38px;
-  font-weight: 400;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
+  width: min(100%, 515px);
+}
 
-  &::after {
-    content: '';
-    position: absolute;
-    top: 50%;
-    right: -27px;
+.description {
+  line-height: 1.2778;
+  letter-spacing: -0.01em;
+}
 
-    translate: 100% -50%;
+.logoWrapper {
+  position: absolute;
+  bottom: 160px;
+  left: 85px;
+  z-index: 10;
 
-    width: 200px;
-    height: 2px;
-
-    background-color: $golden;
-  }
+  width: min(100%, 604px);
+  opacity: 0.04;
 }
 
 .swiper {
   padding-left: 515px;
   padding-right: 48px;
+  margin-bottom: 32px;
 }
 
 .slide {
@@ -53,10 +66,6 @@
 .labelWrapper {
   display: flex;
   justify-content: space-between;
-}
-
-.cardLabel {
-  font-weight: 700;
 }
 
 .navigation {

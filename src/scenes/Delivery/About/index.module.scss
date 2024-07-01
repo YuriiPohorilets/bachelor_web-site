@@ -1,0 +1,46 @@
+@import '@/styles/mixins', '@/styles/variables';
+
+.section {
+  @include shadow(top);
+}
+
+.container {
+  padding-inline: 48px;
+}
+
+.wrapper {
+  @include fullHeight(1080px);
+}
+
+.mediaWrapper {
+  @include square(100%);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  object-fit: cover;
+  object-position: center;
+
+  user-select: none;
+  pointer-events: none;
+}
+
+.contentWrapper {
+  position: absolute;
+  bottom: 150px;
+  left: 50%;
+  z-index: 20;
+  translate: -50% 0;
+
+  display: flex;
+  flex-direction: column;
+  gap: 65px;
+
+  width: min(100%, 519px);
+}
+
+.description {
+  line-height: 1.177;
+  letter-spacing: normal;
+}
