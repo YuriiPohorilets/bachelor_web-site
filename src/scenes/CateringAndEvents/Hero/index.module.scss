@@ -1,0 +1,43 @@
+@import '@/styles/mixins', '@/styles/variables';
+
+.section {
+  @include shadow(top, 508px);
+}
+
+.container {
+  padding-inline: 48px;
+}
+
+.wrapper {
+  @include fullHeight(1080px);
+  padding-top: 340px;
+  padding-bottom: 106px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.contentWrapper {
+  align-self: flex-end;
+  display: flex;
+  flex-direction: column;
+  gap: 21px;
+
+  margin-right: 128px;
+  width: min(100%, 528px);
+}
+
+.title {
+  text-align: center;
+  font-family: $font-cormorantUnicase;
+  font-size: 150px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.description {
+  line-height: 1.27;
+  letter-spacing: normal;
+}

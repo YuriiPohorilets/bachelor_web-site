@@ -4,33 +4,57 @@ import { Navigation, FreeMode } from 'swiper/modules';
 import { Container, Section } from '@/components/common';
 import { CarouselCard } from '@/modules';
 import { Paragraph } from '@/components/ui';
-import { Logo } from '@/components/misc';
 
 import { ArrowNavigationIcon } from '@/assets/icons';
-import SlideImg1 from '@/assets/images/delivery/team_slide-1.jpg';
-import SlideImg2 from '@/assets/images/delivery/team_slide-2.jpg';
-import SlideImg3 from '@/assets/images/delivery/team_slide-3.jpg';
+import ClientImg from '@/assets/images/home/client_placeholder.jpg';
 
 import 'swiper/css';
 import 'swiper/css/free-mode';
 import styles from './index.module.scss';
 
 const content = {
-  title: 'Our Bunny Bells',
+  title: 'Our clients',
   description:
-    "Not only are your dinner meals organized and scheduled to your approval, but they are also delivered, unpacked, plated, and served to you with a cocktail by our beautiful Bunny Bells.\n Joining 'The Bachelor's Club' makes you part of an elite group of gentlemen enjoying this luxury experience while freeing up time to focus on other important matters. We learn your favorite foods, cocktails, and snacks to appeal to your appetite, aiming to gain your trust and loyalty through impeccable service and convenience, building a lasting relationship one bite at a time!",
+    "Enhance your male-themed events with Bachelor Bunny Gourmet Catering/Events. We go beyond just providing food and seamless event management; we deliver an \nunforgettable experience. Our premier catering service is tailored for bachelor parties, cigar nights, sports gatherings, and any guys' night, infusing a touch of gourmet sophistication into every event",
   slides: [
-    { img: SlideImg1, label: 'Sophia Jennings' },
-    { img: SlideImg2, label: 'Sophia Jennings' },
-    { img: SlideImg3, label: 'Sophia Jennings' },
+    {
+      img: ClientImg,
+      label: 'Jason',
+      rating: 4.5,
+      description: 'Graduation Party - a true feast of taste !!!!',
+    },
+    {
+      img: ClientImg,
+      label: 'Tyler',
+      rating: 4,
+      description: 'Los Angeles Themed Party - gourmet treats and impeccable staff:) ',
+    },
+    {
+      img: ClientImg,
+      label: 'Michael',
+      rating: 5,
+      description: 'Los Angeles Birthday Bash - exquisite food and fantastic ambiance!',
+    },
+    {
+      img: ClientImg,
+      label: 'Brandon',
+      rating: 4,
+      description: 'Los Angeles Party - unforgettable menu and top-notch service!',
+    },
+    {
+      img: ClientImg,
+      label: 'Brian',
+      rating: 4.2,
+      description: 'Chicago Bachelor Bash - Delicious dishes and incredible beauties Bells!',
+    },
   ],
 };
 
-export const OurTeam: React.FC = () => {
+export const Clients: React.FC = () => {
   const renderSliderNavigation = () => (
     <div className={styles.navigation}>
       <button
-        id="delivery_team_prevElBtn"
+        id="catering_clients_prevElBtn"
         aria-label="previous slide"
         type="button"
         className={styles.navigationPrev}
@@ -41,7 +65,7 @@ export const OurTeam: React.FC = () => {
       <h2 className={styles.title}>{content.title}</h2>
 
       <button
-        id="delivery_team_nextElBtn"
+        id="catering_clients_nextElBtn"
         aria-label="next slide"
         type="button"
         className={styles.navigationNext}
@@ -56,10 +80,10 @@ export const OurTeam: React.FC = () => {
       <Container>
         <div className={styles.wrapper}>
           <Swiper
-            id="delivery_team-swiper"
+            id="catering_clients-swiper"
             navigation={{
-              prevEl: '#delivery_team_prevElBtn',
-              nextEl: '#delivery_team_nextElBtn',
+              prevEl: '#catering_clients_prevElBtn',
+              nextEl: '#catering_clients_nextElBtn',
             }}
             grabCursor
             slidesPerView="auto"
@@ -73,12 +97,15 @@ export const OurTeam: React.FC = () => {
             {content.slides.map((item, index) => (
               <SwiperSlide key={index} className={styles.slide}>
                 <CarouselCard>
-                  <CarouselCard.ImageWrapper src={item.img} alt={item.label} />
+                  <CarouselCard.ImageWrapper src={item.img} alt={item.description} />
 
                   <div className={styles.contentWrapper}>
                     <div className={styles.labelWrapper}>
-                      <CarouselCard.Label label={item.label} />
+                      <CarouselCard.Label label={item.label} className={styles.cardLabel} />
+                      <CarouselCard.Rating rating={item.rating} />
                     </div>
+
+                    <CarouselCard.Description description={item.description} />
                   </div>
                 </CarouselCard>
               </SwiperSlide>
@@ -89,10 +116,6 @@ export const OurTeam: React.FC = () => {
 
           <div className={styles.descriptionWrapper}>
             <Paragraph className={styles.description}>{content.description}</Paragraph>
-          </div>
-
-          <div className={styles.logoWrapper}>
-            <Logo />
           </div>
         </div>
       </Container>
