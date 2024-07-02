@@ -1,5 +1,8 @@
 import Image from 'next/image';
+import { useRef } from 'react';
+import { motion, useScroll, useTransform } from 'framer-motion';
 
+import { animation } from '@/helpers/framer-motion';
 import { Container, Section } from '@/components/common';
 import { Paragraph, Quote } from '@/components/ui';
 
@@ -15,18 +18,29 @@ const content = {
 };
 
 export const About: React.FC = () => {
+  const sectionRef = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ['0.2 1', '1 0'],
+  });
+
+  const photoY = useTransform(scrollYProgress, [0, 1], [130, 0]);
+  const videoY = useTransform(scrollYProgress, [0, 1], [-130, 0]);
+
   return (
-    <Section className={styles.section}>
+    <Section className={styles.section} containerRef={sectionRef}>
       <Container className={styles.container}>
         <div className={styles.wrapper}>
           <h2 className="hidden">{content.title}</h2>
 
-          <div className={styles.mediaWrapper}></div>
+          <motion.div className={styles.mediaWrapper} style={{ y: videoY }}></motion.div>
 
           <div className={styles.contentWrapper}>
-            <Paragraph className={styles.description}>{content.description}</Paragraph>
+            <motion.div {...animation.fadeIn({})}>
+              <Paragraph className={styles.description}>{content.description}</Paragraph>
+            </motion.div>
 
-            <div className={styles.imgWrapper}>
+            <motion.div className={styles.imgWrapper} style={{ y: photoY }}>
               <Image
                 alt=""
                 src={PhotoImg}
@@ -36,13 +50,13 @@ export const About: React.FC = () => {
                 placeholder="blur"
                 className={styles.img}
               />
-            </div>
+            </motion.div>
 
-            <div className={styles.qouteWrapper}>
+            <motion.div {...animation.fadeIn({})} className={styles.qouteWrapper}>
               <Quote align="right" className={styles.qoute}>
                 {content.quote}
               </Quote>
-            </div>
+            </motion.div>
           </div>
         </div>
       </Container>

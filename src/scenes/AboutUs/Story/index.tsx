@@ -1,10 +1,13 @@
+import Image from 'next/image';
+import { useRef } from 'react';
+import { motion, useScroll, useTransform } from 'framer-motion';
 import { Container, Section } from '@/components/common';
+import { Paragraph } from '@/components/ui';
+import { animation } from '@/helpers/framer-motion';
 
 import BgImg from '@/assets/images/about/story_content.jpg';
 
 import styles from './index.module.scss';
-import Image from 'next/image';
-import { Paragraph } from '@/components/ui';
 
 const content = {
   title: 'Here’s a little story',
@@ -16,13 +19,23 @@ const content = {
 };
 
 export const Story: React.FC = () => {
+  const sectionRef = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ['0 1', '1 1'],
+  });
+
+  const photoY = useTransform(scrollYProgress, [0, 1], [-300, 0]);
+
   return (
-    <Section>
+    <Section containerRef={sectionRef}>
       <Container>
         <div className={styles.wrapper}>
-          <h2 className={styles.title}>{content.title}</h2>
+          <motion.h2 {...animation.fadeIn({})} className={styles.title}>
+            {content.title}
+          </motion.h2>
 
-          <div className={styles.mediaWrapper}>
+          <motion.div className={styles.mediaWrapper} style={{ x: photoY }}>
             <Image
               alt={content.imgLabel}
               src={BgImg}
@@ -33,13 +46,20 @@ export const Story: React.FC = () => {
               className={styles.img}
             />
 
-            <span className={styles.imgLabel}>{content.imgLabel}</span>
-          </div>
+            <motion.span {...animation.fadeIn({})} className={styles.imgLabel}>
+              {content.imgLabel}
+            </motion.span>
+          </motion.div>
 
           <div className={styles.contentWrapper}>
-            <Paragraph className={styles.description}>{content.description[0]}</Paragraph>
+            <Paragraph className={styles.description}>
+              <motion.span {...animation.fadeIn({})}>{content.description[0]}</motion.span>
+            </Paragraph>
+
             <Paragraph initialLetter={false} className={styles.description}>
-              {content.description[1]}
+              <motion.span {...animation.fadeIn({ delay: 0.3 })}>
+                {content.description[1]}
+              </motion.span>
             </Paragraph>
           </div>
         </div>

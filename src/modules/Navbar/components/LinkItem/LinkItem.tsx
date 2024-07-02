@@ -11,7 +11,7 @@ interface IProps {
 
 export const LinkItem: React.FC<IProps> = ({ label, href, className }) => {
   return (
-    <Link href={href} className={classNames(styles.link, className)}>
+    <Link href={href} className={classNames(styles.link, className)} scroll={true}>
       {label}
     </Link>
   );

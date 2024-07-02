@@ -52,7 +52,7 @@ export const Hero: React.FC = () => {
             alt={slide.alt}
             src={slide.img}
             width={1920}
-            height={1220}
+            height={1110}
             priority={true}
             className={styles.img}
           />
