@@ -42,6 +42,8 @@
   bottom: 30px;
   left: 47px;
 
+  display: block;
+
   font-family: $font-century-gothic;
   letter-spacing: -0.01em;
 }
@@ -67,4 +69,8 @@
   flex: 1;
   line-height: 1.27778;
   letter-spacing: normal;
+
+  & > span {
+    display: block;
+  }
 }

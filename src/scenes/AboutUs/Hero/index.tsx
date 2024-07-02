@@ -1,4 +1,6 @@
+import { motion } from 'framer-motion';
 import { Container, Section } from '@/components/common';
+import { animation } from '@/helpers/framer-motion';
 
 import styles from './index.module.scss';
 
@@ -14,11 +16,23 @@ export const Hero: React.FC = () => {
       <Container className={styles.container}>
         <div className={styles.wrapper}>
           <div className={styles.titleWrapper}>
-            <h1 className={styles.title}>{content.title}</h1>
-            <span className={styles.subtitle}>{content.subtitle}</span>
+            <motion.h1 {...animation.fadeIn({ once: true })} className={styles.title}>
+              {content.title}
+            </motion.h1>
+            <motion.span
+              {...animation.fadeIn({ delay: 0.3, once: true })}
+              className={styles.subtitle}
+            >
+              {content.subtitle}
+            </motion.span>
           </div>
 
-          <p className={styles.description}>{content.description}</p>
+          <motion.p
+            {...animation.fadeIn({ delay: 0.5, once: true })}
+            className={styles.description}
+          >
+            {content.description}
+          </motion.p>
         </div>
       </Container>
     </Section>

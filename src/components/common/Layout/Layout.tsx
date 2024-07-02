@@ -1,4 +1,4 @@
-import { ReactLenis } from '@/libs/lenis';
+import { SmoothScrolling } from '@/components/common/SmoothScrolling/SmoothScrolling';
 
 import { Header } from '@/modules';
 
@@ -6,9 +6,9 @@ interface IProps extends React.PropsWithChildren {}
 
 export const Layout: React.FC<IProps> = ({ children }) => {
   return (
-    <ReactLenis root options={{ duration: 2, lerp: 0 }}>
+    <SmoothScrolling>
       <Header />
       <main>{children}</main>
-    </ReactLenis>
+    </SmoothScrolling>
   );
 };

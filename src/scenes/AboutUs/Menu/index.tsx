@@ -10,6 +10,8 @@ import MenuImg from '@/assets/images/about/menu_placeholder.jpg';
 import 'swiper/css';
 import 'swiper/css/free-mode';
 import styles from './index.module.scss';
+import { motion } from 'framer-motion';
+import { animation } from '@/helpers/framer-motion';
 
 const content = {
   title: 'Our menu',
@@ -59,7 +61,9 @@ export const Menu: React.FC = () => {
     <Section>
       <Container>
         <div className={styles.wrapper}>
-          <h2 className={styles.title}>{content.title}</h2>
+          <motion.h2 {...animation.fadeIn({})} className={styles.title}>
+            {content.title}
+          </motion.h2>
 
           <Swiper
             id="about_menu-swiper"
@@ -75,17 +79,24 @@ export const Menu: React.FC = () => {
           >
             {content.slides.map((item, index) => (
               <SwiperSlide key={index} className={styles.slide}>
-                <CarouselCard>
-                  <CarouselCard.ImageWrapper src={item.img} alt={item.description} />
+                <motion.div
+                  {...animation.fadeIn({
+                    delay: index <= 3 ? 0.3 * index : 0,
+                    amount: 1,
+                  })}
+                >
+                  <CarouselCard>
+                    <CarouselCard.ImageWrapper src={item.img} alt={item.description} />
 
-                  <div className={styles.contentWrapper}>
-                    <div className={styles.labelWrapper}>
-                      <CarouselCard.Label label={item.label} />
+                    <div className={styles.contentWrapper}>
+                      <div className={styles.labelWrapper}>
+                        <CarouselCard.Label label={item.label} />
+                      </div>
+
+                      <CarouselCard.Description description={item.description} />
                     </div>
-
-                    <CarouselCard.Description description={item.description} />
-                  </div>
-                </CarouselCard>
+                  </CarouselCard>
+                </motion.div>
               </SwiperSlide>
             ))}
           </Swiper>
