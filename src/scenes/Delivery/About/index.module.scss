@@ -19,11 +19,15 @@
   align-items: center;
   justify-content: center;
 
-  object-fit: cover;
-  object-position: center;
+  & > video {
+    @include square(100%);
 
-  user-select: none;
-  pointer-events: none;
+    object-fit: cover;
+    object-position: center;
+
+    user-select: none;
+    pointer-events: none;
+  }
 }
 
 .contentWrapper {

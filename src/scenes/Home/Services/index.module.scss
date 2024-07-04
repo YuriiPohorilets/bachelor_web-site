@@ -36,7 +36,18 @@
 }
 
 .slideDescription {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
   flex: 1;
+
+  width: min(100%, 471px);
 
   text-align: center;
   font-family: $font-century-gothic;
@@ -141,6 +152,8 @@
 }
 
 .label {
+  display: block;
+
   position: absolute;
   top: 36px;
   left: -248px;

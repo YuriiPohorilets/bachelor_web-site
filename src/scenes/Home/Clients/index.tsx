@@ -1,15 +1,17 @@
+import { motion } from 'framer-motion';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, FreeMode } from 'swiper/modules';
 
 import { Container, Section } from '@/components/common';
 import { CarouselCard } from '@/modules';
 
+import { animation } from '@/helpers/framer-motion';
 import { ArrowNavigationIcon } from '@/assets/icons';
 import ClientImg from '@/assets/images/home/client_placeholder.jpg';
 
-import styles from './index.module.scss';
 import 'swiper/css';
 import 'swiper/css/free-mode';
+import styles from './index.module.scss';
 
 const content = {
   title: 'Our clients',
@@ -74,7 +76,9 @@ export const Clients: React.FC = () => {
     <Section>
       <Container>
         <div className={styles.wrapper}>
-          <h2 className={styles.title}>{content.title}</h2>
+          <motion.h2 {...animation.fadeIn({})} className={styles.title}>
+            {content.title}
+          </motion.h2>
 
           <Swiper
             id="home_clients-swiper"
@@ -90,18 +94,25 @@ export const Clients: React.FC = () => {
           >
             {content.slides.map((item, index) => (
               <SwiperSlide key={index} className={styles.slide}>
-                <CarouselCard>
-                  <CarouselCard.ImageWrapper src={item.img} alt={item.description} />
+                <motion.div
+                  {...animation.fadeIn({
+                    delay: index <= 3 ? 0.3 * index : 0,
+                    amount: 1,
+                  })}
+                >
+                  <CarouselCard>
+                    <CarouselCard.ImageWrapper src={item.img} alt={item.description} />
 
-                  <div className={styles.contentWrapper}>
-                    <div className={styles.labelWrapper}>
-                      <CarouselCard.Label label={item.label} className={styles.cardLabel} />
-                      <CarouselCard.Rating rating={item.rating} />
+                    <div className={styles.contentWrapper}>
+                      <div className={styles.labelWrapper}>
+                        <CarouselCard.Label label={item.label} className={styles.cardLabel} />
+                        <CarouselCard.Rating rating={item.rating} />
+                      </div>
+
+                      <CarouselCard.Description description={item.description} />
                     </div>
-
-                    <CarouselCard.Description description={item.description} />
-                  </div>
-                </CarouselCard>
+                  </CarouselCard>
+                </motion.div>
               </SwiperSlide>
             ))}
           </Swiper>

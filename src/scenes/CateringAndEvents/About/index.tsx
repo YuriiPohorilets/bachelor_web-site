@@ -1,5 +1,5 @@
 import { Container, Section } from '@/components/common';
-
+import { VideoPlayer } from '@/components/misc';
 import { Button, Paragraph } from '@/components/ui';
 import { PagePathname } from '@/types';
 
@@ -18,7 +18,9 @@ export const About: React.FC = () => {
         <div className={styles.wrapper}>
           <h2 className="hidden">{content.title}</h2>
 
-          <div className={styles.mediaWrapper}></div>
+          <div className={styles.mediaWrapper}>
+            <VideoPlayer src="videos/catering.mp4" width={1920} height={1080} />
+          </div>
 
           <div className={styles.contentWrapper}>
             <Paragraph className={styles.description}>{content.description}</Paragraph>

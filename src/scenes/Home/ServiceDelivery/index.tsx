@@ -1,4 +1,6 @@
+import { useRef } from 'react';
 import Image from 'next/image';
+import { motion, useScroll, useTransform } from 'framer-motion';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { EffectFade, Autoplay, Pagination } from 'swiper/modules';
 
@@ -25,6 +27,15 @@ const content = {
 };
 
 export const ServiceDelivery: React.FC = () => {
+  const sectionRef = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ['0 1', '0 0.3'],
+  });
+
+  const descriptionY = useTransform(scrollYProgress, [0, 1], [200, 0]);
+  const buttonY = useTransform(scrollYProgress, [0, 1], [-200, 0]);
+
   const renderSwiper = () => (
     <Swiper
       id="home_delivery-swiper"
@@ -60,7 +71,7 @@ export const ServiceDelivery: React.FC = () => {
   );
 
   return (
-    <Section>
+    <Section containerRef={sectionRef}>
       <Container>
         <div className={styles.wrapper}>
           <h2 className="hidden">{content.title}</h2>
@@ -69,9 +80,13 @@ export const ServiceDelivery: React.FC = () => {
           <div id="paginationContainer_delivery" className={styles.pagination} />
 
           <div className={styles.contentWrapper}>
-            <Paragraph className={styles.description}>{content.description}</Paragraph>
+            <motion.div style={{ x: descriptionY }}>
+              <Paragraph className={styles.description}>{content.description}</Paragraph>
+            </motion.div>
 
-            <PageLink page={PagePathname.Delivery} badge />
+            <motion.div style={{ x: buttonY }}>
+              <PageLink page={PagePathname.Delivery} badge />
+            </motion.div>
           </div>
         </div>
       </Container>

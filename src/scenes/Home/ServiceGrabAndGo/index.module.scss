@@ -30,20 +30,32 @@
   height: 100%;
 }
 
-.img {
+.imgWrapper {
   position: absolute;
 }
 
-.img:nth-of-type(1) {
+.imgWrapper:nth-of-type(1) {
   top: 0;
   left: 0;
   z-index: 0;
+
+  width: 940px;
+  height: 557px;
 }
 
-.img:nth-of-type(2) {
+.imgWrapper:nth-of-type(2) {
   bottom: 0;
   right: 0;
   z-index: 1;
+
+  width: 467px;
+  height: 478px;
+}
+
+.img {
+  @include square(100%);
+  object-fit: cover;
+  object-position: center;
 }
 
 .contentWrapper {
