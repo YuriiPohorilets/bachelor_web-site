@@ -5,6 +5,7 @@ import styles from './Button.module.scss';
 
 interface BaseProps extends React.PropsWithChildren {
   as?: 'button' | 'a';
+  variant?: 'white' | 'accent';
   className?: string;
 }
 
@@ -18,8 +19,13 @@ interface AnchorProps extends BaseProps, React.AnchorHTMLAttributes<HTMLAnchorEl
 
 type IProps = ButtonProps | AnchorProps;
 
-export const Button: React.FC<IProps> = ({ as = 'button', children, ...props }) => {
-  const className = classNames(styles.btn, classNames);
+export const Button: React.FC<IProps> = ({
+  as = 'button',
+  variant = 'white',
+  children,
+  ...props
+}) => {
+  const className = classNames(styles.btn, classNames, styles[variant]);
 
   if (as === 'button') {
     return (

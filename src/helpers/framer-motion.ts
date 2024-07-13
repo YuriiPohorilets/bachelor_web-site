@@ -1,5 +1,5 @@
 export const animation = {
-  fadeIn: (params: IAnimationOptions) => {
+  fadeIn: (params: IAnimationOptions = {}) => {
     const { delay = 0, duration = 0.8, amount = 0.5, once = false, ease = 'easeInOut' } = params;
 
     return {
@@ -10,7 +10,7 @@ export const animation = {
     };
   },
 
-  zoomIn: (params: IAnimationOptions) => {
+  zoomIn: (params: IAnimationOptions = {}) => {
     const { delay = 0, duration = 0.8, amount = 0.5, once = false, ease = 'easeInOut' } = params;
 
     return {

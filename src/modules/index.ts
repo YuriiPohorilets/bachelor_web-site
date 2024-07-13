@@ -5,3 +5,4 @@ export { Footer } from './Footer/Footer';
 export { Address } from './Address/Address';
 export { Social } from './Social/Social';
 export { Accordion } from './Accordion/Accordion';
+export { ContactForm } from './ContactForm/ContactForm';
