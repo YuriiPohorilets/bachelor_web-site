@@ -4,10 +4,6 @@
   @include shadow('top');
 }
 
-.container {
-  padding-right: 48px;
-}
-
 .wrapper {
   @include fullHeight(1080px);
 
@@ -21,7 +17,19 @@
   width: min(100%, 1106px);
   height: 609px;
 
-  border: 5px dashed tomato;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  & > video {
+    @include square(100%);
+
+    object-fit: cover;
+    object-position: center;
+
+    user-select: none;
+    pointer-events: none;
+  }
 }
 
 .contentWrapper {
@@ -31,6 +39,7 @@
   flex-direction: column;
   gap: 73px;
 
+  padding-right: 48px;
   width: min(100%, 435px);
 }
 

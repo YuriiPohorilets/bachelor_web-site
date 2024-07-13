@@ -1,3 +1,6 @@
+import { motion } from 'framer-motion';
+
+import { animation } from '@/helpers/framer-motion';
 import { Links } from '@/types';
 import { Container, Section } from '@/components/common';
 import { Button, Paragraph } from '@/components/ui';
@@ -15,13 +18,20 @@ export const Community: React.FC = () => {
     <Section>
       <Container className={styles.container}>
         <div className={styles.wrapper}>
-          <h2 className={styles.title}>{content.title}</h2>
+          <motion.h2 {...animation.fadeIn({})} className={styles.title}>
+            {content.title}
+          </motion.h2>
 
           <div className={styles.contentWrapper}>
-            <Paragraph className={styles.description}>{content.description}</Paragraph>
-            <Button as="a" target="_blank" href={Links.Youtube}>
-              Join the club
-            </Button>
+            <motion.div {...animation.fadeIn({})}>
+              <Paragraph className={styles.description}>{content.description}</Paragraph>
+            </motion.div>
+
+            <motion.div {...animation.fadeIn({})} className={styles.btnWrapper}>
+              <Button as="a" target="_blank" href={Links.Youtube}>
+                Join the club
+              </Button>
+            </motion.div>
           </div>
         </div>
       </Container>

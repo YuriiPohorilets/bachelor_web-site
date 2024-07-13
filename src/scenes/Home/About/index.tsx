@@ -1,8 +1,11 @@
+import { useRef } from 'react';
 import Image from 'next/image';
+import { motion, useScroll, useTransform } from 'framer-motion';
 
 import { Container, Section } from '@/components/common';
 import { Paragraph, Quote } from '@/components/ui';
 import { Logo } from '@/components/misc';
+import { animation } from '@/helpers/framer-motion';
 
 import ContentImg from '@/assets/images/home/about_content.png';
 
@@ -16,20 +19,33 @@ const content = {
 };
 
 export const About: React.FC = () => {
+  const sectionRef = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ['0.3 1', '1 0'],
+  });
+
+  const photoY = useTransform(scrollYProgress, [0, 1], [130, 0]);
+
   return (
-    <Section className={styles.section}>
+    <Section className={styles.section} containerRef={sectionRef}>
       <Container>
         <div className={styles.wrapper}>
           <h2 className="hidden">{content.title}</h2>
 
           <div className={styles.contentWrapper}>
-            <Quote align="right" className={styles.quote}>
-              {content.quote}
-            </Quote>
-            <Paragraph>{content.description}</Paragraph>
+            <motion.div {...animation.fadeIn({})}>
+              <Quote align="right" className={styles.quote}>
+                {content.quote}
+              </Quote>
+            </motion.div>
+
+            <motion.div {...animation.fadeIn({})}>
+              <Paragraph>{content.description}</Paragraph>
+            </motion.div>
           </div>
 
-          <div className={styles.mediaWrapper}>
+          <motion.div className={styles.mediaWrapper} style={{ y: photoY }}>
             <Image
               alt=""
               src={ContentImg}
@@ -39,7 +55,7 @@ export const About: React.FC = () => {
               placeholder="blur"
               className={styles.img}
             />
-          </div>
+          </motion.div>
 
           <div className={styles.logoWrapper}>
             <Logo />

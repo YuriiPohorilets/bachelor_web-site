@@ -15,7 +15,9 @@
   align-items: center;
   justify-content: center;
 
-  & > * {
+  & > video {
+    @include square(100%);
+
     object-fit: cover;
     object-position: center;
 

@@ -2,20 +2,58 @@
 
 .list {
   display: flex;
-  flex-direction: column;
+
   gap: 12px;
+}
+
+.column {
+  flex-direction: column;
+}
+
+.row {
+  flex-direction: row-reverse;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.row li:last-child {
+  display: none;
 }
 
 .link {
   color: $white;
-  font-size: 18px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 1;
 
   transition: color $duration-sm $easing-base;
 
   @include hover {
     color: $golden;
+  }
+}
+
+.link:has(> .icon) {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  padding-block: 12px;
+}
+
+.label {
+  color: currentColor;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1;
+}
+
+.icon {
+  color: currentColor;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  & > svg {
+    color: currentColor;
   }
 }

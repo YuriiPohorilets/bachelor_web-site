@@ -51,6 +51,10 @@
   text-align: center;
   text-transform: uppercase;
 
+  // & > span {
+  //   display: inline-block;
+  // }
+
   & > span:nth-of-type(1) {
     font-family: $font-cormorantUnicase;
     font-size: clamp-calc($screen-sm-min, $screen-xxl-min, 34px, 117px);
@@ -68,6 +72,8 @@
 }
 
 .description {
+  display: block;
+
   text-align: center;
   font-size: clamp-calc($screen-sm-min, $screen-xxl-min, 20px, 24px);
   letter-spacing: 0.06em;

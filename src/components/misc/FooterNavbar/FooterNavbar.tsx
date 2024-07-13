@@ -4,7 +4,7 @@ import { navList } from '@/constants/navigation';
 
 import styles from './FooterNavbar.module.scss';
 
-export const FooterNavbar = () => {
+export const FooterNavbar: React.FC = () => {
   return (
     <nav className={styles.nav}>
       <ul className={styles.list}>

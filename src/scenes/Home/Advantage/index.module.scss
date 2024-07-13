@@ -11,7 +11,10 @@
   justify-content: center;
 }
 
-.description {
+.descriptionWrapper {
   width: min(100%, 1227px);
+}
+
+.description {
   text-transform: uppercase;
 }

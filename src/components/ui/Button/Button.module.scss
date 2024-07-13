@@ -11,18 +11,29 @@
 
   width: 100%;
 
-  color: $dark-bg;
   text-align: center;
   font-size: 20px;
   letter-spacing: 0.15em;
   text-transform: uppercase;
 
-  background-color: $white;
-
   transition: color $duration-sm $easing-base;
+}
+
+.btn.white {
+  color: $dark-bg;
+  background-color: $white;
 
   @include hover {
     color: $golden;
+  }
+}
+
+.btn.accent {
+  color: $white;
+  background-color: $golden;
+
+  @include hover {
+    color: $dark-bg;
   }
 }
 

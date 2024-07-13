@@ -14,6 +14,8 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import styles from './index.module.scss';
+import { AnimatePresence, motion } from 'framer-motion';
+import { animation } from '@/helpers/framer-motion';
 
 const content = {
   title: 'Our services',
@@ -55,7 +57,18 @@ export const Services: React.FC = () => {
         <ArrowNavigationIcon />
       </button>
 
-      <p className={styles.slideDescription}>{content.slides[currentSlideId].description}</p>
+      <AnimatePresence>
+        <motion.p
+          key={currentSlideId}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.8 }}
+          className={styles.slideDescription}
+        >
+          {content.slides[currentSlideId].description}
+        </motion.p>
+      </AnimatePresence>
 
       <button
         id="home_services_nextElBtn"
@@ -66,7 +79,9 @@ export const Services: React.FC = () => {
         <ArrowNavigationIcon />
       </button>
 
-      <span className={styles.label}>Our proposals</span>
+      <motion.span {...animation.fadeIn({})} className={styles.label}>
+        Our proposals
+      </motion.span>
     </div>
   );
 
@@ -107,9 +122,12 @@ export const Services: React.FC = () => {
                   className={styles.slideImg}
                 />
 
-                <div className={styles.slideContentWrapper}>
+                <motion.div
+                  {...animation.fadeIn({ amount: 1, delay: 0.2 })}
+                  className={styles.slideContentWrapper}
+                >
                   <h3 className={styles.slideTitle}>{item.title}</h3>
-                </div>
+                </motion.div>
               </SwiperSlide>
             ))}
           </Swiper>

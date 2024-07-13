@@ -5,6 +5,7 @@ import { Body } from './components/Body/Body';
 import { AccordionContext } from './AccordionProvider';
 
 import styles from './Accordion.module.scss';
+import { animation } from '@/helpers/framer-motion';
 
 interface IProps extends React.PropsWithChildren {
   label: string;
@@ -20,7 +21,7 @@ const AccordionModule: React.FC<IProps> = ({ children, label, isExpanded, onClic
 
   return (
     <AccordionContext.Provider value={{ isExpanded, onClick }}>
-      <div className={styles.wrapper}>
+      <motion.div {...animation.fadeIn({ amount: 0.5 })} className={styles.wrapper}>
         <Header label={label} />
 
         <AnimatePresence initial={false}>
@@ -35,7 +36,7 @@ const AccordionModule: React.FC<IProps> = ({ children, label, isExpanded, onClic
             {children}
           </motion.div>
         </AnimatePresence>
-      </div>
+      </motion.div>
     </AccordionContext.Provider>
   );
 };

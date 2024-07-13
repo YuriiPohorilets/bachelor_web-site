@@ -11,6 +11,8 @@ import SlideImg2 from '@/assets/images/home/hero_slide-2.jpg';
 import 'swiper/css';
 import 'swiper/css/effect-fade';
 import styles from './index.module.scss';
+import { motion } from 'framer-motion';
+import { animation } from '@/helpers/framer-motion';
 
 const content = {
   title: ['Bachelor Bunny', 'Gourmet'],
@@ -59,9 +61,13 @@ export const Hero: React.FC = () => {
   const renderBenefits = () => (
     <ul className={styles.benefitsList}>
       {content.benefits.map((benefit, index) => (
-        <li key={index} className={styles.benefitsItem}>
+        <motion.li
+          {...animation.fadeIn({ delay: 0.15 * index, once: true })}
+          key={index}
+          className={styles.benefitsItem}
+        >
           {benefit}
-        </li>
+        </motion.li>
       ))}
     </ul>
   );
@@ -74,17 +80,27 @@ export const Hero: React.FC = () => {
         <div className={styles.wrapper}>
           <div className={styles.contentWrapper}>
             <div className={styles.titleWrapper}>
-              <div className={styles.logoWrapper}>
+              <motion.div
+                {...animation.zoomIn({ delay: 0.5, duration: 0.8, once: true })}
+                className={styles.logoWrapper}
+              >
                 <Logo />
-              </div>
+              </motion.div>
 
               <h1 className={styles.title}>
-                <span>{content.title[0]}</span>
-                <span>{content.title[1]}</span>
+                <motion.span {...animation.fadeIn({ once: true })}>{content.title[0]}</motion.span>
+                <motion.span {...animation.fadeIn({ delay: 0.3, once: true })}>
+                  {content.title[1]}
+                </motion.span>
               </h1>
             </div>
 
-            <span className={styles.description}>{content.description}</span>
+            <motion.span
+              {...animation.fadeIn({ delay: 0.5, once: true })}
+              className={styles.description}
+            >
+              {content.description}
+            </motion.span>
           </div>
 
           {renderBenefits()}

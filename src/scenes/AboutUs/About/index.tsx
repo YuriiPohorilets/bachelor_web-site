@@ -5,6 +5,7 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 import { animation } from '@/helpers/framer-motion';
 import { Container, Section } from '@/components/common';
 import { Paragraph, Quote } from '@/components/ui';
+import { VideoPlayer } from '@/components/misc';
 
 import PhotoImg from '@/assets/images/about/about_photo.jpg';
 
@@ -33,7 +34,9 @@ export const About: React.FC = () => {
         <div className={styles.wrapper}>
           <h2 className="hidden">{content.title}</h2>
 
-          <motion.div className={styles.mediaWrapper} style={{ y: videoY }}></motion.div>
+          <motion.div className={styles.mediaWrapper} style={{ y: videoY }}>
+            <VideoPlayer src="videos/about-us.mp4" width={1106} height={609} />
+          </motion.div>
 
           <div className={styles.contentWrapper}>
             <motion.div {...animation.fadeIn({})}>

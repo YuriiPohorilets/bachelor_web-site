@@ -6,6 +6,10 @@
   gap: 12px;
 }
 
+.list:has(.link > svg) {
+  gap: 0;
+}
+
 .link {
   line-height: 1;
 
@@ -14,4 +18,17 @@
   @include hover {
     color: $golden;
   }
+
+  & > svg {
+    color: currentColor;
+  }
+}
+
+.link:has(> svg) {
+  padding-block: 12px;
+  padding-inline: 16px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

@@ -8,6 +8,9 @@
 }
 
 .wrapper {
+  position: relative;
+  z-index: 20;
+
   display: flex;
   flex-direction: column;
   align-items: flex-end;
@@ -25,7 +28,7 @@
 
 .descriptionWrapper {
   position: absolute;
-  top: 161px;
+  top: calc(161px - 249px);
   left: 49px;
   z-index: 20;
 
